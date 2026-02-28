@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>วิชาทั่วไปทหาร — ปุ่มเมนู (Mobile)</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #f7faf6;
+    --card: #ffffff;
+    --ink: #0f2920;
+    --muted: #5a6b64;
+    --accent: #2f8b5b;       /* สีหลัก (ปรับเป็นโทนกองทัพได้) */
+    --accent-2: #245c43;
+    --radius: 14px;
+    --gap: 12px;
+    --shadow: 0 8px 20px rgba(16,24,20,0.08);
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; font-family:"Sarabun",system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans Thai",sans-serif;
+    background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased;
+    padding:18px;
+  }
+
+  header{
+    display:flex; gap:12px; align-items:center; margin-bottom:12px;
+  }
+  .logo{
+    width:46px; height:46px; border-radius:10px; background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    display:flex;align-items:center;justify-content:center;color:white;font-weight:700;
+    box-shadow:var(--shadow);
+  }
+  h1{font-size:18px;margin:0 0 2px 0;}
+  p.lead{margin:0;color:var(--muted);font-size:13px}
+
+  /* grid */
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:var(--gap);
+  }
+
+  /* single column on very small screens */
+  @media (max-width:360px){
+    .grid{grid-template-columns: 1fr}
+  }
+
+  a.card{
+    display:flex; gap:12px; align-items:center; text-decoration:none;
+    background:var(--card); padding:12px; border-radius:12px; color:var(--ink);
+    box-shadow:var(--shadow); transition:transform .12s ease, box-shadow .12s ease;
+    border:1px solid rgba(33,33,33,0.04);
+  }
+  a.card:active{transform:scale(.995)}
+  a.card:focus{outline:3px solid rgba(47,139,91,0.12); outline-offset:4px}
+  a.card:hover{transform:translateY(-4px); box-shadow:0 14px 30px rgba(16,24,20,0.10)}
+
+  .icon{
+    min-width:44px; min-height:44px; border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(180deg, rgba(47,139,91,0.12), rgba(36,92,67,0.06));
+    color:var(--accent-2); font-weight:700; font-size:18px;
+    flex-shrink:0;
+  }
+
+  .meta{
+    display:flex; flex-direction:column;
+  }
+  .title{font-size:14px; font-weight:600; margin:0 0 4px 0; line-height:1.1;}
+  .subtitle{font-size:12px; color:var(--muted); margin:0}
+
+  /* optional small badge for subtopics */
+  .badge{
+    margin-left:auto; font-size:11px; color:var(--accent-2); font-weight:600;
+    background:rgba(47,139,91,0.08); padding:6px 8px; border-radius:999px;
+  }
+
+  /* optional search / filter row */
+  .controls{display:flex; gap:8px; margin:12px 0 18px; align-items:center}
+  .search{
+    flex:1; padding:10px 12px; border-radius:999px; border:1px solid rgba(16,24,20,0.06);
+    background:white; font-size:14px;
+  }
+  .filter{
+    background:var(--accent); color:white; border-radius:10px; padding:10px 12px; font-size:13px;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">ท</div>
+    <div>
+      <h1>วิชาทั่วไปทหาร</h1>
+      <p class="lead">แตะหัวข้อเพื่อเปิด (ใหม่: แท็บ/หน้าต่างใหม่)</p>
+    </div>
+  </header>
+
+  <!-- optional controls -->
+  <div class="controls" aria-hidden="true">
+    <input class="search" placeholder="ค้นหา (เช่น: ปฐมพยาบาล, ยิง)" />
+    <div class="filter">กรอง</div>
+  </div>
+
+  <!-- grid of buttons (แต่ละปุ่มเป็นลิงก์ target="_blank" ) -->
+  <main class="grid" role="list">
+    <!-- Example: copy this block for each item and set href -->
+    <a class="card" href="#" target="_blank" rel="noopener" role="listitem" aria-label="วิชาติดต่อสื่อสาร — เปิดในแท็บใหม่">
+      <div class="icon" aria-hidden="true">📡</div>
+      <div class="meta">
+        <div class="title">วิชาติดต่อสื่อสาร</div>
+        <div class="subtitle">เทคนิคการใช้อุปกรณ์สื่อสาร/สัญญาณ</div>
+      </div>
+      <div class="badge">รายละเอียด</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาบุคคลท่าอาวุธท่ายิง — เปิดในแท็บใหม่">
+      <div class="icon">🔫</div>
+      <div class="meta">
+        <div class="title">วิชาบุคคลท่าอาวุธท่ายิง</div>
+        <div class="subtitle">ท่ายืน, นั่ง, นอน และการเล็ง</div>
+      </div>
+      <div class="badge">ฝึกปฏิบัติ</div>
+    </a>
+
+    <a class="card" href="https://sites.google.com/view/sodierweaponss/%E0%B8%AB%E0%B8%99%E0%B8%B2%E0%B9%81%E0%B8%A3%E0%B8%81" target="_blank" rel="noopener" aria-label="วิชาอาวุธศึกษา — เปิดในแท็บใหม่">
+      <div class="icon">🛡️</div>
+      <div class="meta">
+        <div class="title">วิชาอาวุธศึกษา</div>
+        <div class="subtitle">ประเภทอาวุธและความปลอดภัย</div>
+      </div>
+      <div class="badge">ทฤษฎี</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาท่าบรรจุเลิกบรรจุ แก้ไขเหตุติดขัด — เปิดในแท็บใหม่">
+      <div class="icon">⚙️</div>
+      <div class="meta">
+        <div class="title">วิชาท่าบรรจุ/เลิกบรรจุ</div>
+        <div class="subtitle">ขั้นตอนการบรรจุและแก้เหตุขัดข้อง</div>
+      </div>
+      <div class="badge">ขั้นตอน</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาถอดประกอบปืน — เปิดในแท็บใหม่">
+      <div class="icon">🔧</div>
+      <div class="meta">
+        <div class="title">วิชาถอดประกอบปืน</div>
+        <div class="subtitle">การถอด, ล้าง, ประกอบอย่างปลอดภัย</div>
+      </div>
+      <div class="badge">ช่าง</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาหีบเล็งและการเล็ง3จุด — เปิดในแท็บใหม่">
+      <div class="icon">🎯</div>
+      <div class="meta">
+        <div class="title">วิชาหีบเล็ง & การเล็ง 3 จุด</div>
+        <div class="subtitle">เทคนิคการตั้งศูนย์และการเล็งแม่นยำ</div>
+      </div>
+      <div class="badge">ฝึกยิง</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาคานเล็ง — เปิดในแท็บใหม่">
+      <div class="icon">📐</div>
+      <div class="meta">
+        <div class="title">วิชาคานเล็ง</div>
+        <div class="subtitle">การปรับคาน/เครื่องเล็ง</div>
+      </div>
+      <div class="badge">ปรับตั้ง</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาพรางตัว — เปิดในแท็บใหม่">
+      <div class="icon">🟩</div>
+      <div class="meta">
+        <div class="title">วิชาพรางตัว</div>
+        <div class="subtitle">เทคนิคพรางผู้และยานพาหนะ</div>
+      </div>
+      <div class="badge">สนาม</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาเคลื่อนที่ทางยุทธวิธีและการพักแรม — เปิดในแท็บใหม่">
+      <div class="icon">🚶</div>
+      <div class="meta">
+        <div class="title">วิชาเคลื่อนที่ทางยุทธวิธี & การพักแรม</div>
+        <div class="subtitle">การเคลื่อนที่เป็นหน่วยและตั้งที่พัก</div>
+      </div>
+      <div class="badge">ยุทธวิธี</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาหน้ากากแก๊ส — เปิดในแท็บใหม่">
+      <div class="icon">😷</div>
+      <div class="meta">
+        <div class="title">วิชาหน้ากากแก๊ส</div>
+        <div class="subtitle">ใช้งาน, ถอด, และบำรุงรักษา</div>
+      </div>
+      <div class="badge">CBRN</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาระเบิดขว้าง — เปิดในแท็บใหม่">
+      <div class="icon">💣</div>
+      <div class="meta">
+        <div class="title">วิชาระเบิดขว้าง</div>
+        <div class="subtitle">ความปลอดภัยและเทคนิคการขว้าง</div>
+      </div>
+      <div class="badge">อันตราย</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาการลาดตระเวนและการระวังป้องกัน — เปิดในแท็บใหม่">
+      <div class="icon">🧭</div>
+      <div class="meta">
+        <div class="title">วิชาการลาดตระเวน & การระวังป้องกัน</div>
+        <div class="subtitle">กฎการลาดตระเวนและสัญญาณเตือน</div>
+      </div>
+      <div class="badge">ลาดตระเวน</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาบุคคลทำการรบในเวลากลางคืน — เปิดในแท็บใหม่">
+      <div class="icon">🌙</div>
+      <div class="meta">
+        <div class="title">วิชาบุคคลทำการรบ (กลางคืน)</div>
+        <div class="subtitle">เทคนิคกลางคืน & อุปกรณ์</div>
+      </div>
+      <div class="badge">กลางคืน</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาบุคคลทำการรบในเวลากลางวัน — เปิดในแท็บใหม่">
+      <div class="icon">☀️</div>
+      <div class="meta">
+        <div class="title">วิชาบุคคลทำการรบ (กลางวัน)</div>
+        <div class="subtitle">เทคนิคกลางวัน & การสื่อสาร</div>
+      </div>
+      <div class="badge">กลางวัน</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาป้อมสนาม — เปิดในแท็บใหม่">
+      <div class="icon">🏰</div>
+      <div class="meta">
+        <div class="title">วิชาป้อมสนาม</div>
+        <div class="subtitle">การตั้งป้อมและการป้องกัน</div>
+      </div>
+      <div class="badge">ป้อม</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาเครื่องกีดขวาง — เปิดในแท็บใหม่">
+      <div class="icon">🧱</div>
+      <div class="meta">
+        <div class="title">วิชาเครื่องกีดขวาง</div>
+        <div class="subtitle">การสร้างและใช้อุปกรณ์กีดขวาง</div>
+      </div>
+      <div class="badge">กีดขวาง</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาการอ่านแผนที่และการใช้เข็มทิศ — เปิดในแท็บใหม่">
+      <div class="icon">🗺️</div>
+      <div class="meta">
+        <div class="title">วิชาการอ่านแผนที่ & ใช้เข็มทิศ</div>
+        <div class="subtitle">ทิศทาง, สเกล และการนำทาง</div>
+      </div>
+      <div class="badge">นำทาง</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาปฐมพยาบาล — เปิดในแท็บใหม่">
+      <div class="icon">⛑️</div>
+      <div class="meta">
+        <div class="title">วิชาปฐมพยาบาล</div>
+        <div class="subtitle">การปฐมพยาบาลเบื้องต้นบนสนามรบ</div>
+      </div>
+      <div class="badge">HS</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชาการยิงประกอบการเคลื่อนที่เป็นคู่ — เปิดในแท็บใหม่">
+      <div class="icon">🤝</div>
+      <div class="meta">
+        <div class="title">วิชาการยิงประกอบการเคลื่อนที่เป็นคู่</div>
+        <div class="subtitle">การประสานคู่ยิง/คู่เคลื่อน</div>
+      </div>
+      <div class="badge">คู่</div>
+    </a>
+
+    <a class="card" href="#" target="_blank" rel="noopener" aria-label="วิชายุทธวิธีทหารราบ — เปิดในแท็บใหม่">
+      <div class="icon">⚔️</div>
+      <div class="meta">
+        <div class="title">วิชายุทธวิธีทหารราบ</div>
+        <div class="subtitle">หน่วยรบย่อมและยุทธวิธีรวม</div>
+      </div>
+      <div class="badge">ยุทธ</div>
+    </a>
+  </main>
+
+<script>
+  // (Optional) basic search filter to quickly find a subject on mobile
+  const search = document.querySelector('.search');
+  if (search){
+    search.addEventListener('input', (e)=>{
+      const q = e.target.value.trim().toLowerCase();
+      document.querySelectorAll('.grid a.card').forEach(card=>{
+        const title = card.querySelector('.title').textContent.toLowerCase();
+        const subtitle = card.querySelector('.subtitle').textContent.toLowerCase();
+        const show = (title+subtitle).includes(q) || !q;
+        card.style.display = show ? 'flex' : 'none';
+      });
+    });
+  }
+</script>
+</body>
+</html>
