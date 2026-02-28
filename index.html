@@ -104,7 +104,30 @@
     height: 6px;
     background-color: var(--brand);
   }
+.manual-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2e3b2f, #1f2a20);
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
 
+.manual-item:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #3c4f3d, #2a382c);
+}
+
+.item-icon {
+  color: #f0c040;
+}
+
+.item-text small {
+  opacity: 0.8;
+}
   .manual-item:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
   .manual-item:hover {
     transform: translateY(-2px);
@@ -186,6 +209,49 @@
     </div>
   </div>
 
+  <div class="section">
+    <h2>เมนูหน่วยการสอน</h2>
+    <div class="grid">
+      <a class="manual-item" href="pandbotlearn.html" target="_blank" rel="noopener">
+        <div class="item-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"></path></svg>
+        </div>
+        <div class="item-text"><div>แผนบทเรียน</div><small>รวมโครงสร้าง/จุดประสงค์</small></div>
+      </a>
+       <a class="manual-item" href="#" target="_blank" rel="noopener">
+  <div class="item-icon" aria-hidden="true">
+    <!-- ไอคอนบุคคลถือกระบี่ -->
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         width="26" height="26" 
+         viewBox="0 0 24 24" 
+         fill="none" 
+         stroke="currentColor" 
+         stroke-width="2" 
+         stroke-linecap="round" 
+         stroke-linejoin="round">
+
+      <!-- ศีรษะ -->
+      <circle cx="12" cy="5" r="2"></circle>
+
+      <!-- ลำตัว -->
+      <path d="M12 7v6"></path>
+
+      <!-- แขนซ้าย -->
+      <path d="M12 9l-4 3"></path>
+
+      <!-- แขนขวาถือกระบี่ -->
+      <path d="M12 9l5-2"></path>
+
+      <!-- กระบี่ -->
+      <path d="M17 7l3-3"></path>
+      <path d="M19 4l1 1"></path>
+
+      <!-- ขา -->
+      <path d="M12 13l-3 6"></path>
+      <path d="M12 13l3 6"></path>
+
+    </svg>
+  </div>
 
   <div class="item-text">
     <div>บุคคลท่ากระบี่ทหาร</div>
