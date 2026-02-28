@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ฐานข้อมูลบทเพลงเกียรติยศ - กองทัพไทย</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #e2e8f0; /* สีเทาอ่อนแบบทางการ */
+        }
+        .military-header {
+            background-color: #1a2f23; /* สีเขียวขี้ม้าเข้ม */
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); /* ลวดลาย Noise บางๆ */
+            border-bottom: 6px solid #d4af37; /* ขอบสีทอง */
+        }
+        .gold-text {
+            color: #d4af37;
+        }
+        .tab-link {
+            border-bottom: 4px solid transparent;
+            font-weight: 500;
+            color: #94a3b8;
+        }
+        .tab-link:hover {
+            color: #ffffff;
+            background-color: #2c4a38;
+        }
+        .tab-active {
+            border-bottom: 4px solid #d4af37 !important;
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            background-color: #1a2f23;
+        }
+        .card-military {
+            border-radius: 2px;
+            border-top: 5px solid #1a2f23;
+            transition: all 0.2s ease-in-out;
+        }
+        .card-military:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+            border-top-color: #d4af37;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Top Official Bar -->
+    <div class="bg-black text-slate-400 text-[10px] sm:text-xs py-1.5 px-4 flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-1 sm:gap-0">
+        <span><i class="fas fa-shield-alt mr-1 text-[#d4af37]"></i>เว็บไซต์รวบรวมข้อมูลอย่างเป็นทางการ</span>
+        <span class="text-center">กระทรวงกลาโหม (MINISTRY OF DEFENCE)</span>
+    </div>
+
+    <!-- Header Section -->
+    <header class="military-header text-white py-10 sm:py-12 px-4 text-center shadow-xl relative">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <i class="fas fa-star gold-text text-2xl sm:text-3xl mb-3 sm:mb-4 mx-1"></i>
+            <i class="fas fa-star gold-text text-3xl sm:text-4xl mb-3 sm:mb-4 mx-2"></i>
+            <i class="fas fa-star gold-text text-2xl sm:text-3xl mb-3 sm:mb-4 mx-1"></i>
+            
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 tracking-wide uppercase">ฐานข้อมูลบทเพลงเกียรติยศ</h1>
+            <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-slate-300 mb-4 sm:mb-6">กองทัพไทย (Royal Thai Armed Forces)</h2>
+            <p class="text-sm sm:text-md opacity-80 max-w-2xl mx-auto border-t border-slate-600 pt-4 px-2">
+                ระบบสืบค้นและรวบรวมบทเพลงประวัติศาสตร์ เพลงมาร์ช และเพลงปลุกใจ <br class="hidden sm:block"/>เพื่อธำรงไว้ซึ่งความภาคภูมิใจในเอกราชและอธิปไตยของชาติ
+            </p>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="bg-slate-900 sticky top-0 z-50 shadow-md border-b border-slate-700">
+        <div class="max-w-6xl mx-auto flex overflow-x-auto no-scrollbar justify-start md:justify-center">
+            <button onclick="filterSection('all')" id="tab-all" class="px-5 sm:px-8 py-3 sm:py-4 transition whitespace-nowrap tab-link tab-active uppercase text-xs sm:text-sm tracking-wider">
+                <i class="fas fa-layer-group mr-1 sm:mr-2"></i> ทุกเหล่าทัพ
+            </button>
+            <button onclick="filterSection('army')" id="tab-army" class="px-5 sm:px-8 py-3 sm:py-4 transition whitespace-nowrap tab-link uppercase text-xs sm:text-sm tracking-wider">
+                <i class="fas fa-person-military-pointing mr-1 sm:mr-2"></i> กองทัพบก
+            </button>
+            <button onclick="filterSection('navy')" id="tab-navy" class="px-5 sm:px-8 py-3 sm:py-4 transition whitespace-nowrap tab-link uppercase text-xs sm:text-sm tracking-wider">
+                <i class="fas fa-anchor mr-1 sm:mr-2"></i> กองทัพเรือ
+            </button>
+            <button onclick="filterSection('airforce')" id="tab-airforce" class="px-5 sm:px-8 py-3 sm:py-4 transition whitespace-nowrap tab-link uppercase text-xs sm:text-sm tracking-wider">
+                <i class="fas fa-plane-up mr-1 sm:mr-2"></i> กองทัพอากาศ
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto py-12 px-4 min-h-[50vh]">
+        
+        <!-- Loading State -->
+        <div id="loading-spinner" class="text-center py-20 hidden">
+            <i class="fas fa-circle-notch fa-spin text-5xl gold-text mb-4"></i>
+            <p class="text-slate-600 font-semibold text-lg animate-pulse">กำลังเชื่อมต่อฐานข้อมูลระบบ...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error-message" class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded hidden mb-6" role="alert">
+            <p class="font-bold">เกิดข้อผิดพลาด</p>
+            <p>ไม่สามารถดึงข้อมูลจากฐานข้อมูลได้ กรุณาลองใหม่อีกครั้ง</p>
+        </div>
+
+        <!-- Grid Container -->
+        <div id="songs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <!-- Content will be injected by JavaScript -->
+        </div>
+
+    </main>
+
+    <!-- Modal for Lyrics -->
+    <div id="lyrics-modal" class="fixed inset-0 bg-black bg-opacity-80 hidden z-[100] flex items-center justify-center p-2 sm:p-4 backdrop-blur-sm">
+        <div class="bg-[#f8fafc] rounded-sm max-w-2xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-hidden shadow-2xl border-t-8 border-[#1a2f23] flex flex-col">
+            <div class="p-4 sm:p-6 border-b-2 border-slate-200 bg-[#f8fafc] flex justify-between items-start sm:items-center z-10 shrink-0">
+                <div class="pr-2">
+                    <span id="modal-badge" class="inline-block px-2 py-1 bg-slate-200 text-slate-700 text-[10px] sm:text-xs font-bold uppercase mb-1 sm:mb-2 rounded-sm border border-slate-300"></span>
+                    <h3 id="modal-title" class="text-xl sm:text-2xl font-bold text-[#1a2f23] leading-tight">เนื้อเพลง</h3>
+                </div>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-red-600 text-xl sm:text-2xl transition bg-slate-200 hover:bg-red-100 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-sm shrink-0">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-5 sm:p-8 bg-white overflow-y-auto grow">
+                <div id="modal-lyrics" class="whitespace-pre-line text-base sm:text-lg leading-relaxed text-slate-800 font-medium">
+                    <!-- Lyrics here -->
+                </div>
+            </div>
+            <div class="p-4 sm:p-5 border-t-2 border-slate-200 bg-slate-100 flex items-start gap-3 sm:gap-4 shrink-0">
+                <div class="pt-0.5 sm:pt-1">
+                    <i class="fas fa-info-circle text-[#d4af37] text-lg sm:text-xl"></i>
+                </div>
+                <div>
+                    <h4 class="text-xs sm:text-sm font-bold text-slate-700">ข้อมูลเพิ่มเติม:</h4>
+                    <p id="modal-info" class="text-xs sm:text-sm text-slate-600 mt-1"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 border-t-4 border-[#1a2f23] text-slate-400 py-10 sm:py-12 text-center mt-6 sm:mt-10">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col items-center">
+            <i class="fas fa-shield-cat text-4xl mb-4 opacity-50"></i>
+            <p class="font-bold text-slate-300">© 2024 ระบบฐานข้อมูลบทเพลงทหาร</p>
+            <p class="text-sm mt-2">เพื่อการสืบค้นและอนุรักษ์บทเพลงเกียรติยศแห่งกองทัพไทย</p>
+            <div class="mt-6 flex gap-4 text-xs opacity-60">
+                <a href="#" class="hover:text-white transition">นโยบายความเป็นส่วนตัว</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white transition">ติดต่อหน่วยงาน</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // จำลองข้อมูล JSON ที่ส่งมาจาก API / Database
+        const rawJsonData = `
+        {
+            "status": 200,
+            "message": "success",
+            "data": [
+                {
+                    "id": 1,
+                    "title": "มาร์ชกองทัพบก",
+                    "branch": "army",
+                    "desc": "เพลงมาร์ชหลักประจำกองทัพบกไทย แสดงถึงความเข้มแข็งและภาระหน้าที่",
+                    "lyrics": "กองทัพบกไทย เกรียงไกรสมัยชาติร่วมใจ\\nเราทหารบกไทย ไว้ชื่อให้โลกได้ยล\\nหน้าที่เรามี คือรักษาสุขทุกข์ปวงชน\\nเราสละชีพเพื่อพ้น หมู่ไพรีที่คิดราวี\\n\\n(ซ้ำ) เลือดทหารบกไทย สีแดงเข้มข้นรินไหล\\nเรายอมสละได้ เพื่อไทยอยู่เย็นเป็นสุข\\nชาติ ศาสน์ กษัตริย์ คือจุดหมายที่ใจเราปลุก\\nพร้อมเผชิญความทุกข์ เพื่อปวงประชาทั่วแดนไทย",
+                    "info": "เพลงมาร์ชที่มีความสำคัญที่สุดของกองทัพบกไทย",
+                    "meta": { "icon": "fa-person-military-pointing", "color": "bg-[#2f4f33]" }
+                },
+                {
+                    "id": 2,
+                    "title": "หนักแผ่นดิน",
+                    "branch": "army",
+                    "desc": "เพลงปลุกใจให้รักชาติและตระหนักถึงหน้าที่ของพลเมือง",
+                    "lyrics": "คนใดใช้ชื่อไทยอยู่ แต่ใจไม่รู้อารี\\nคนใดไม่มีศีลธรรม มุ่งหวังแต่ทางเลวทราม\\nคนใดไม่ยอมทำคุณ แต่กลับก่อแต่ความรุนแรง\\n(สร้อย) หนักแผ่นดิน หนักแผ่นดิน หนักแผ่นดิน คนเช่นนี้หนักแผ่นดิน\\n\\nคนใดเห็นแก่ตัว และมัวเมาในกามารมณ์\\nคนใดไม่ยอมพึ่งตน และมุ่งแต่ทางคดโกง\\n(สร้อย) หนักแผ่นดิน หนักแผ่นดิน หนักแผ่นดิน คนเช่นนี้หนักแผ่นดิน",
+                    "info": "คำร้อง: พ.อ.บุญส่ง หักฤทธิ์ศึก",
+                    "meta": { "icon": "fa-shield-halved", "color": "bg-[#1a2f23]" }
+                },
+                {
+                    "id": 3,
+                    "title": "ดอกประดู่",
+                    "branch": "navy",
+                    "desc": "เพลงประจำราชนาวีไทยที่เปรียบเปรยทหารเรือเหมือนดอกประดู่",
+                    "lyrics": "หะเบสสมอพลัน ริ้วพรรณรันจวน\\nพวกเราจงควร มั่นใจเหลือล้น\\nเป็นชาติชาวเรือ เราคือทุกคน\\nยอมเสียสละตน เพื่อผลชาติไทย\\n\\n(ซ้ำ) มาพวกเรามา เรามาร่วมกัน\\nฝ่าฟันอันตราย ไม่ว่าที่ไหน\\nทะเลกว้างใหญ่ ใจเรากว้างกว่า\\nปกป้องน่านน้ำ ทั่วแดนสยาม\\n\\nพวกเราเปรียบเหมือน ดังดอกประดู่\\nที่บานพรั่งพรู พร้อมกันทั้งต้น\\nจะร่วงจะโรย ก็พร้อมยอมทน\\nเพื่อปกป้องชน ไทยทั้งแผ่นดิน",
+                    "info": "พระนิพนธ์ในพระเจ้าบรมวงศ์เธอ กรมหลวงชุมพรเขตอุดมศักดิ์",
+                    "meta": { "icon": "fa-anchor", "color": "bg-[#0f172a]" }
+                },
+                {
+                    "id": 4,
+                    "title": "มาร์ชราชนาวี",
+                    "branch": "navy",
+                    "desc": "เพลงมาร์ชที่แสดงความสง่างามของกองเรือไทย",
+                    "lyrics": "เราทหารเรือไทย ใจหาญกล้า\\nปกป้องท้องทะเล กว้างสุดตา\\nธงไตรรงค์โบกสะบัด เหนือนาวา\\nราชนาวีไทย เก่งกล้าในสากล\\n\\nพายุจะโหม คลื่นจะแรง\\nเราไม่เคยหวั่นกลัว ไพรีที่ไหน\\nเราจะสู้ จนชีพมลาย\\nเพื่อให้ชาติไทย อยู่คู่ฟ้าดิน",
+                    "info": "เพลงมาร์ชหลักที่ใช้ในพิธีการของกองทัพเรือ",
+                    "meta": { "icon": "fa-ship", "color": "bg-[#1e3a8a]" }
+                },
+                {
+                    "id": 5,
+                    "title": "มาร์ชกองทัพอากาศ",
+                    "branch": "airforce",
+                    "desc": "เพลงมาร์ชแสดงแสนยานุภาพทางอากาศของไทย",
+                    "lyrics": "กองทัพอากาศไทย ยิ่งใหญ่เหนือฟ้า\\nเราเหล่าเหยี่ยวเวหา ป้องภัยพาล\\nบินฝ่าเมฆา เหนือท้องถิ่นไทย\\nเพื่อความเกรียงไกร ของปวงประชา\\n\\nเครื่องยนต์คำราม ปีกอันกล้าแข็ง\\nเราส่งแรงใจ ไปทั่วเวหา\\nชาติไทยเรานี้ ต้องมีศักดา\\nกองทัพอากาศไทย ปกป้องฟ้าไทย",
+                    "info": "ใช้บรรเลงเพื่อเชิดชูเกียรติเหล่านักบินและเจ้าหน้าที่ทัพอากาศ",
+                    "meta": { "icon": "fa-plane-up", "color": "bg-[#0369a1]" }
+                },
+                {
+                    "id": 6,
+                    "title": "น่านฟ้าไทย",
+                    "branch": "airforce",
+                    "desc": "เพลงพรรณนาความสวยงามและความรักในน่านฟ้าไทย",
+                    "lyrics": "น่านฟ้าไทย กว้างไกลสุดลูกหูลูกตา\\nเราชาวเวหา รักษาไว้ให้มั่นคง\\nไม่ให้ใคร มารุกรานอธิปไตย\\nเรายอมพลีชีพ เพื่อไทยได้อยู่เย็น\\n\\nลมพัดแรง แสงแดดกล้า\\nเราไม่ล้า เราไม่ถอย\\nเฝ้าคอยระวังภัย เหนือยอดดอย\\nปกป้องไทย ให้นิรันดร์",
+                    "info": "เพลงแห่งความรักและการอุทิศตนเพื่อท้องฟ้าเมืองไทย",
+                    "meta": { "icon": "fa-cloud", "color": "bg-[#0284c7]" }
+                }
+            ]
+        }
+        `;
+
+        let globalSongsData = [];
+
+        // ฟังก์ชันจำลองการดึงข้อมูลจาก API แบบ Asynchronous
+        async function fetchSongDatabase() {
+            const grid = document.getElementById('songs-grid');
+            const spinner = document.getElementById('loading-spinner');
+            const errorMsg = document.getElementById('error-message');
+
+            grid.innerHTML = '';
+            spinner.classList.remove('hidden');
+            errorMsg.classList.add('hidden');
+
+            try {
+                // จำลองความล่าช้าของเครือข่าย (Network Delay) 800ms
+                await new Promise(resolve => setTimeout(resolve, 800));
+                
+                // การดึงข้อมูล JSON และแปลงค่า
+                const response = JSON.parse(rawJsonData);
+                
+                if(response.status === 200) {
+                    globalSongsData = response.data;
+                    renderSongs(globalSongsData);
+                } else {
+                    throw new Error("Invalid API Response");
+                }
+            } catch (error) {
+                console.error("Database Connection Failed:", error);
+                errorMsg.classList.remove('hidden');
+            } finally {
+                spinner.classList.add('hidden');
+            }
+        }
+
+        // ฟังก์ชันกรองข้อมูลตามเหล่าทัพ
+        function filterSection(branch) {
+            // อัปเดตสถานะของแท็บ (Tabs UI)
+            document.querySelectorAll('.tab-link').forEach(btn => {
+                btn.classList.remove('tab-active');
+            });
+            document.getElementById(`tab-${branch}`).classList.add('tab-active');
+
+            // กรองข้อมูลจาก global array
+            const filtered = branch === 'all' 
+                ? globalSongsData 
+                : globalSongsData.filter(s => s.branch === branch);
+            
+            renderSongs(filtered);
+        }
+
+        // ฟังก์ชันสร้าง UI Card จากข้อมูล JSON
+        function renderSongs(songsArray) {
+            const grid = document.getElementById('songs-grid');
+            grid.innerHTML = '';
+
+            songsArray.forEach(song => {
+                const badgeColor = getBadgeColor(song.branch);
+                const branchName = getBranchName(song.branch);
+                const borderColor = getCardBorderColor(song.branch);
+
+                const card = `
+                    <div class="card-military bg-white shadow-md flex flex-col cursor-pointer ${borderColor}" onclick="openLyrics(${song.id})">
+                        <div class="flex">
+                            <div class="${song.meta.color} w-16 sm:w-24 flex justify-center items-center text-white text-2xl sm:text-3xl shrink-0">
+                                <i class="fas ${song.meta.icon}"></i>
+                            </div>
+                            <div class="p-3 sm:p-5 flex-grow bg-white overflow-hidden">
+                                <div class="flex justify-between items-start mb-1">
+                                    <h4 class="text-lg sm:text-xl font-bold text-slate-800 uppercase leading-tight truncate pr-2">${song.title}</h4>
+                                </div>
+                                <span class="inline-block px-2 py-0.5 sm:py-1 bg-slate-100 border border-slate-200 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-slate-600 mb-2 sm:mb-3">
+                                    ${branchName}
+                                </span>
+                                <p class="text-slate-600 text-xs sm:text-sm line-clamp-2 leading-relaxed">${song.desc}</p>
+                            </div>
+                        </div>
+                        <div class="px-3 sm:px-5 py-2 sm:py-3 bg-slate-50 border-t border-slate-200 flex justify-between items-center text-[10px] sm:text-xs font-bold uppercase tracking-wider">
+                            <span class="text-slate-600 hover:text-black transition flex items-center gap-1.5 sm:gap-2">
+                                <i class="fas fa-file-lines text-[#d4af37]"></i> เปิดเอกสารเนื้อร้อง
+                            </span>
+                            <i class="fas fa-arrow-right text-slate-400"></i>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        function getBranchName(branch) {
+            const names = { army: 'รหัส: ทบ. (กองทัพบก)', navy: 'รหัส: ทร. (กองทัพเรือ)', airforce: 'รหัส: ทอ. (กองทัพอากาศ)' };
+            return names[branch];
+        }
+
+        function getBadgeColor(branch) {
+            const colors = { 
+                army: 'bg-green-100 text-green-800', 
+                navy: 'bg-blue-100 text-blue-800', 
+                airforce: 'bg-sky-100 text-sky-800' 
+            };
+            return colors[branch];
+        }
+
+        function getCardBorderColor(branch) {
+            const borders = {
+                army: 'hover:border-green-700',
+                navy: 'hover:border-blue-900',
+                airforce: 'hover:border-sky-700'
+            };
+            return borders[branch] || 'hover:border-[#d4af37]';
+        }
+
+        function openLyrics(id) {
+            const song = globalSongsData.find(s => s.id === id);
+            if (!song) return;
+
+            document.getElementById('modal-title').innerText = song.title;
+            document.getElementById('modal-badge').innerText = getBranchName(song.branch);
+            document.getElementById('modal-lyrics').innerText = song.lyrics;
+            document.getElementById('modal-info').innerText = song.info;
+            
+            const modal = document.getElementById('lyrics-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('lyrics-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // ปิด Modal เมื่อคลิกพื้นที่ว่าง
+        window.onclick = function(event) {
+            const modal = document.getElementById('lyrics-modal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Initial Load - สั่งดึงข้อมูลเมื่อเปิดหน้าเว็บ
+        window.addEventListener('DOMContentLoaded', () => {
+            fetchSongDatabase();
+        });
+    </script>
+</body>
+</html>
