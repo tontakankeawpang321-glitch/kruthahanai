@@ -1,195 +1,1528 @@
 <!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แผนบทเรียน: การฝึกบุคคลท่ามือเปล่า ท่าแสดงความเคารพ</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Sarabun', sans-serif;
-            background-color: #f3f4f6;
-        }
-        @media print {
-            body { background-color: white; }
-            .no-print { display: none !important; }
-            .print-shadow-none { box-shadow: none !important; }
-            .page-break { page-break-before: always; }
-        }
-        .header-bg {
-            background-color: #1e3a8a; /* Navy Blue */
-        }
-    </style>
-</head>
-<body class="text-gray-800 antialiased py-4 md:py-8 px-2 md:px-4">
+<html lang="th"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6ImJlMDcyNWEwZmIxZWZmN2I5N2MyNDEwY2U0Nzc1YmM5MGY1MWFiYTUiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIwNzU1NzI5ODcxMjc0MzgyNTUzOCIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjX2M5MjMzZTY4ZGJhYTE4NWJfRWJvb2tfTWFrZXJfUHJvLmh0bWwtNjkifSwiZXhwIjoxNzcyODAyMzEwLCJpYXQiOjE3NzI3OTg3MTAsImFsZyI6IlJTMjU2In0.g4RZp0mGfuctpR4T_Y8BFcYFVqw68cxe6oE4iGaLElyryYbLYSwR96fEnCblsNXGlespdP8V_sHewqoFcNBBfjjc2Olp_rixirRgBSlnXsnxaHXhsLU-wPWDm-7N7xBmUeCW3fhPbyp8vifP3LyDRGNNimsDDGAUW0CJ9DWaflyR5A2InmYljg1uhwNC3A1sI19GjhE2W9MnnpbKuYvPJA_Xxt-2qiixiNuVYG0Ay2jyP-W4LAiPxv0Ho6DIz566F48OVm27LRXtxNJzuA9ukaMrZ-2vTH6FsoWrWE6qxuW9pi-UufuEqiiq_C2nBS1L8ss_QzVkGbve2E4YiXPDkQ","c_c9233e68dbaa185b_Ebook_Maker_Pro.html-69")</script><script>(function(){'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
 
-    <!-- Container -->
-    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden print-shadow-none border border-gray-200">
-        
-        <!-- Action Bar (No Print) -->
-        <div class="bg-gray-100 p-3 md:p-4 flex justify-end items-center border-b border-gray-200 no-print">
-            <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 md:px-4 text-sm md:text-base rounded shadow flex items-center transition duration-200">
-                <svg class="w-4 h-4 md:w-5 md:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
-                พิมพ์แผนบทเรียน
-            </button>
-        </div>
+ MIT License
 
-        <!-- Header -->
-        <div class="header-bg text-white p-6 md:p-8 text-center">
-            <h1 class="text-2xl md:text-3xl font-bold mb-2">แผนบทเรียน (Lesson Plan)</h1>
-            <h2 class="text-lg md:text-xl">วิชา: การฝึกบุคคลท่ามือเปล่า</h2>
-            <p class="text-blue-200 mt-2 text-sm md:text-base">เรื่อง: ท่าแสดงความเคารพ (ท่าวันทยหัตถ์ตอนอยู่กับที่)</p>
-        </div>
+ Copyright (c) 2017-2023 W.Y.
 
-        <!-- Content Body -->
-        <div class="p-4 md:p-8">
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+})();</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-3-flash-preview","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
+</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ebook Maker Pro (Auto-Crop &amp; Fix Export)</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400&amp;family=Chakra+Petch:wght@300;400&amp;family=Itim&amp;family=Kanit:wght@300;400&amp;family=Krub:wght@300;400&amp;family=Mali:wght@300;400&amp;family=Niramit:wght@300;400&amp;family=Pattaya&amp;family=Pridi:wght@300;400&amp;family=Prompt:wght@300;400&amp;family=Sarabun:wght@300;400&amp;family=Sriracha&amp;family=Taviraj:wght@300;400&amp;family=Trirong:wght@300;400&amp;family=Kodchasan:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<!-- JSZip for Exporting -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" crossorigin="anonymous"></script>
+<!-- PDF.js for PDF Rendering -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" crossorigin="anonymous"></script>
+
+<!-- Tailwind (Disable Preflight) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    corePlugins: {
+      preflight: false,
+    }
+  }
+</script>
+
+<style>
+/* === Global Ebook Styles === */
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:"Sarabun",sans-serif;
+  background:#0f0f0f;
+  color:#eee;
+  overflow:hidden;
+  transition:0.3s;
+}
+
+/* === THEMES === */
+body.dark{ background:#0f0f0f; color:#eee; }
+body.light{ background:#ffffff; color:#111; }
+body.paper{ background:#f4ecd8; color:#3a2f1b; background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px); background-size:4px 4px; }
+body.blue{ background:#101820; color:#c0d6e4; }
+body.matrix{ background:#000000; color:#00ff41; text-shadow: 0 0 2px #003300; }
+
+/* Top Bar Styling */
+.topbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#1a1a1a;
+  padding:10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:100;
+  gap:10px;
+  flex-wrap:wrap;
+  border-bottom: 1px solid #333;
+}
+body.light .topbar{background:#f0f0f0; border-color:#ddd;}
+body.paper .topbar{background:#e8dcc3; border-color:#d1c4a9;}
+
+button, select{
+  padding:6px 12px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:14px;
+}
+.file-btn{background:#4CAF50;color:#fff}
+.control-btn{background:#333;color:#fff; border: 1px solid #555;}
+.download-btn{background:#2196F3;color:#fff}
+.add-page-btn{background:#FF9800;color:#fff}
+body.light .control-btn{background:#ddd;color:#111; border-color:#ccc;}
+
+/* Slider (Horizontal by default) */
+.slider{
+  display:flex;
+  height:100vh;
+  width:100vw;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+}
+
+.slide{
+  min-width:100vw;
+  height:100vh;
+  padding:0;
+  display: flex;
+  flex-direction: column;
+  overflow: auto; 
+  scroll-snap-align:start;
+  position: relative;
+}
+
+/* === VERTICAL MODE STYLES === */
+body.vertical-read .slider {
+    display: block;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: none;
+    padding-top: 50px;
+}
+
+body.vertical-read .slide {
+    min-width: 100%;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    overflow: visible;
+    border-bottom: 2px dashed rgba(100,100,100,0.3);
+    padding-bottom: 20px;
+}
+
+body.vertical-read .nav {
+    display: none !important;
+}
+
+/* Standard Slide Content */
+.slide-content {
+    width: 100%;
+    margin: auto; 
+    padding: 60px 0 100px 0; 
+    position: relative; 
+    flex-shrink: 0; 
+    text-align: center; 
+}
+
+/* Delete Page Button Style */
+.delete-page-btn {
+    position: absolute;
+    top: 65px; 
+    right: 20px;
+    background: #ff4444;
+    color: white;
+    border: 1px solid white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 60;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    opacity: 0.8;
+    transition: 0.2s;
+}
+.delete-page-btn:hover {
+    opacity: 1;
+    background: #cc0000;
+    transform: scale(1.05);
+}
+
+/* Image Tools */
+.img-wrapper { position: relative; width: 100%; margin: 0; padding: 0; display: block; min-height: 200px; background: rgba(100,100,100,0.1); }
+.slide img { 
+    display: block; 
+    width: 100%; 
+    height: auto; 
+    margin: 0 auto; 
+    object-fit: contain; 
+    transition: opacity 0.3s;
+}
+.img-tools { position: absolute; top: 10px; right: 10px; display: flex; gap: 5px; z-index: 50; flex-wrap: wrap; justify-content: flex-end;}
+.tool-btn { background: rgba(0,0,0,0.7); color: white; border: 1px solid rgba(255,255,255,0.5); padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold;}
+.tool-btn:hover { background: #333; }
+.delete-btn:hover { background: red; }
+.crop-btn:hover { background: #2196F3; }
+
+/* Navigation & Controls */
+.nav{ position:fixed; bottom:20px; right:20px; opacity: 0.8; z-index: 100; }
+.nav button{ font-size:18px; margin-left:5px; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+.page-control{ position:fixed; bottom:20px; left:20px; background:#1a1a1a; padding:10px; border-radius:12px; opacity: 0.9; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.3); display: flex; flex-direction: column; align-items: center; }
+body.light .page-control{background:#eee}
+.page-control input[type=range]{ width:150px; margin-top: 5px; }
+
+/* TOC */
+.toc{ position:fixed; top:52px; left:0; width:260px; height:calc(100% - 52px); background:#1b1b1b; overflow-y:auto; transform:translateX(-100%); transition:transform 0.3s ease-in-out; padding:15px; z-index:150; box-shadow: 2px 0 5px rgba(0,0,0,0.5); }
+body.light .toc{background:#f5f5f5}
+.toc.show{ transform:translateX(0); }
+.toc-item-wrapper { display: flex; align-items: center; margin-bottom: 5px; padding: 2px; border-radius: 6px; }
+.toc-item-wrapper:hover { background: rgba(255,255,255,0.1); }
+body.light .toc-item-wrapper:hover { background: rgba(0,0,0,0.05); }
+.toc-item-wrapper.active { background: #4CAF50; color: white; }
+.toc-text { 
+    flex-grow: 1; padding: 6px 10px; cursor: pointer; 
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; 
+    border: 1px solid transparent; 
+    display: block; text-decoration: none; color: inherit; 
+}
+.toc-text[contenteditable="true"]:focus { background: rgba(0,0,0,0.5); border: 1px solid #777; outline: none; color: white; white-space: normal; }
+body.light .toc-text[contenteditable="true"]:focus { background: white; color: black; }
+
+/* TOC Delete Button */
+.toc-del-btn { margin-left: 5px; cursor: pointer; font-size: 14px; padding: 2px 6px; color: #ff6666; opacity: 0.8; transition: 0.2s; flex-shrink: 0; }
+.toc-del-btn:hover { opacity: 1; color: #ff0000; transform: scale(1.2); }
+
+/* Modal for Cropping */
+.crop-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; }
+.crop-container { position: relative; max-width: 90%; max-height: 80%; overflow: hidden; border: 2px solid #555; background: #000; }
+.crop-controls { margin-top: 20px; display: flex; gap: 10px; }
+canvas#cropCanvas { display: block; cursor: crosshair; }
+
+/* Loading Indicator */
+#loading-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:3000; display:none; flex-direction:column; align-items:center; justify-content:center; color:white; }
+.loader { border: 5px solid #f3f3f3; border-top: 5px solid #2196F3; border-radius: 50%; width: 60px; height: 60px; animation: spin 1s linear infinite; margin-bottom: 20px; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+.edit-only { display: block; }
+</style>
+<style>*, ::before, ::after {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x:  ;
+    --tw-pan-y:  ;
+    --tw-pinch-zoom:  ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position:  ;
+    --tw-gradient-via-position:  ;
+    --tw-gradient-to-position:  ;
+    --tw-ordinal:  ;
+    --tw-slashed-zero:  ;
+    --tw-numeric-figure:  ;
+    --tw-numeric-spacing:  ;
+    --tw-numeric-fraction:  ;
+    --tw-ring-inset:  ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur:  ;
+    --tw-brightness:  ;
+    --tw-contrast:  ;
+    --tw-grayscale:  ;
+    --tw-hue-rotate:  ;
+    --tw-invert:  ;
+    --tw-saturate:  ;
+    --tw-sepia:  ;
+    --tw-drop-shadow:  ;
+    --tw-backdrop-blur:  ;
+    --tw-backdrop-brightness:  ;
+    --tw-backdrop-contrast:  ;
+    --tw-backdrop-grayscale:  ;
+    --tw-backdrop-hue-rotate:  ;
+    --tw-backdrop-invert:  ;
+    --tw-backdrop-opacity:  ;
+    --tw-backdrop-saturate:  ;
+    --tw-backdrop-sepia:  ;
+    --tw-contain-size:  ;
+    --tw-contain-layout:  ;
+    --tw-contain-paint:  ;
+    --tw-contain-style:  
+}
+::backdrop {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x:  ;
+    --tw-pan-y:  ;
+    --tw-pinch-zoom:  ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position:  ;
+    --tw-gradient-via-position:  ;
+    --tw-gradient-to-position:  ;
+    --tw-ordinal:  ;
+    --tw-slashed-zero:  ;
+    --tw-numeric-figure:  ;
+    --tw-numeric-spacing:  ;
+    --tw-numeric-fraction:  ;
+    --tw-ring-inset:  ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur:  ;
+    --tw-brightness:  ;
+    --tw-contrast:  ;
+    --tw-grayscale:  ;
+    --tw-hue-rotate:  ;
+    --tw-invert:  ;
+    --tw-saturate:  ;
+    --tw-sepia:  ;
+    --tw-drop-shadow:  ;
+    --tw-backdrop-blur:  ;
+    --tw-backdrop-brightness:  ;
+    --tw-backdrop-contrast:  ;
+    --tw-backdrop-grayscale:  ;
+    --tw-backdrop-hue-rotate:  ;
+    --tw-backdrop-invert:  ;
+    --tw-backdrop-opacity:  ;
+    --tw-backdrop-saturate:  ;
+    --tw-backdrop-sepia:  ;
+    --tw-contain-size:  ;
+    --tw-contain-layout:  ;
+    --tw-contain-paint:  ;
+    --tw-contain-style:  
+}</style></head>
+
+<body class="dark">
+
+<!-- Hidden Inputs -->
+<!-- เพิ่ม multiple ให้สามารถเลือกลงแต่ละหน้าได้หลายภาพรวดเดียว -->
+
+
+<!-- Loading Overlay -->
+
+
+<!-- Crop Modal -->
+
+
+<div class="topbar">
+  
+
+  <div style="display:flex; gap:5px; align-items:center;">
+    <button class="control-btn" onclick="toggleLayout()" id="layoutBtn">📜 แนวตั้ง</button>
+    <button class="control-btn" onclick="toggleTOC()">สารบัญ</button>
+    <button class="control-btn" onclick="fontSize(1)">A+</button>
+    <button class="control-btn" onclick="fontSize(-1)">A-</button>
+    
+    <select id="pageSelect" onchange="window.location.hash = '#slide-' + this.value" class="control-btn" style="max-width: 70px;"><option value="0">1</option><option value="1">2</option><option value="2">3</option><option value="3">4</option><option value="4">5</option></select>
+  </div>
+</div>
+
+<div class="toc" id="toc"></div>
+
+<div class="slider" id="slider">
+    <!-- PAGE 0: Initial Blank Page -->
+    <div class="slide" id="slide-0" data-name="หน้า 1">
+        <div class="slide-content">
             
-            <!-- Section 1: ข้อมูลทั่วไป -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 border-b border-gray-200 pb-6">
-                <div>
-                    <p><span class="font-semibold text-gray-700">ผู้สอน/ครูฝึก:</span> ..............................................................</p>
-                    <p class="mt-2"><span class="font-semibold text-gray-700">กลุ่มเป้าหมาย/ผู้รับการฝึก:</span> นักศึกษาวิชาทหาร / ลูกเสือ / กำลังพลใหม่</p>
-                </div>
-                <div>
-                    <p><span class="font-semibold text-gray-700">เวลาที่ใช้สอน:</span> 50 นาที</p>
-                    <p class="mt-2"><span class="font-semibold text-gray-700">สถานที่ฝึก:</span> ลานฝึก / สนามหญ้า</p>
-                </div>
-            </div>
-
-            <!-- Section 2: วัตถุประสงค์ -->
-            <div class="mb-8 border-b border-gray-200 pb-6">
-                <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
-                    <span class="bg-blue-100 text-blue-800 p-2 rounded mr-3">๑</span> ความมุ่งหมาย (Objectives)
-                </h3>
-                <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                    <li>เพื่อให้ผู้รับการฝึกทราบถึงคำบอกคำสั่ง และการปฏิบัติท่าแสดงความเคารพ (วันทยหัตถ์) ที่ถูกต้อง</li>
-                    <li>เพื่อให้ผู้รับการฝึกสามารถปฏิบัติท่าวันทยหัตถ์ และท่ามือลงได้อย่างถูกต้อง แข็งแรง และพร้อมเพรียงกัน</li>
-                    <li>เพื่อเสริมสร้างบุคลิกภาพ ลักษณะท่าทางทหาร และความมีระเบียบวินัย</li>
-                </ul>
-            </div>
-
-            <!-- Section 3: คำบอกและลักษณะท่าทาง -->
-            <div class="mb-8 border-b border-gray-200 pb-6">
-                <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
-                    <span class="bg-blue-100 text-blue-800 p-2 rounded mr-3">๒</span> คำบอกคำสั่ง (Commands)
-                </h3>
-                <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                    <p class="mb-2"><span class="font-semibold text-indigo-700">ท่าทำความเคารพ:</span> ใช้คำบอกแบบแบ่ง <strong>"ตรงหน้า, ระวัง - วันทยหัตถ์"</strong> หรือ <strong>"วันทยหัตถ์"</strong></p>
-                    <p><span class="font-semibold text-indigo-700">ท่าเลิกทำความเคารพ:</span> ใช้คำบอกแบบรวด <strong>"มือลง"</strong> (หรือ "มือลง - อึ๊บ")</p>
-                </div>
-            </div>
-
-            <!-- Section 4: ลำดับการปฏิบัติ -->
-            <div class="mb-8 border-b border-gray-200 pb-6">
-                <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
-                    <span class="bg-blue-100 text-blue-800 p-2 rounded mr-3">๓</span> รายละเอียดการปฏิบัติ (Execution)
-                </h3>
-                <div class="space-y-4">
-                    <div class="flex flex-col md:flex-row gap-4">
-                        <div class="md:w-1/3 bg-blue-50 p-4 rounded-lg font-semibold text-blue-900 border border-blue-100">
-                            การปฏิบัติท่าวันทยหัตถ์<br>
-                            <span class="text-sm font-normal text-blue-700">(เมื่อได้ยินคำบอก)</span>
-                        </div>
-                        <div class="md:w-2/3 text-gray-700">
-                            <ul class="list-decimal list-inside space-y-2">
-                                <li>ยกมือขวาขึ้นมาอย่างรวดเร็วและแข็งแรงในทางสั้นที่สุด</li>
-                                <li>ให้นิ้วทั้งห้าเรียงชิดติดกัน เหยียดตรง แขนขวาท่อนล่างเป็นเส้นตรง</li>
-                                <li><strong>กรณีสวมหมวก:</strong> ปลายนิ้วชี้ขวาแตะที่ขอบหมวกด้านล่าง (หรือกะบังหมวก) ในแนวหางคิ้วขวา</li>
-                                <li><strong>กรณีไม่สวมหมวก:</strong> ปลายนิ้วชี้ขวาแตะที่หางคิ้วขวา</li>
-                                <li>เปิดส้นมือขึ้นเล็กน้อย ไม่ให้เห็นฝ่ามือ ข้อศอกขวาเปิดไปข้างหน้าเล็กน้อย ขนานกับพื้น (หรือตามสรีระ)</li>
-                                <li>ลำตัวยืดตรง สายตามองตรงไปข้างหน้า (หรือมองผู้ที่รับการเคารพ)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-col md:flex-row gap-4">
-                        <div class="md:w-1/3 bg-red-50 p-4 rounded-lg font-semibold text-red-900 border border-red-100">
-                            การปฏิบัติท่ามือลง<br>
-                            <span class="text-sm font-normal text-red-700">(เมื่อได้ยินคำบอก "มือลง")</span>
-                        </div>
-                        <div class="md:w-2/3 text-gray-700">
-                            <ul class="list-decimal list-inside space-y-2">
-                                <li>ลดมือขวาลงในทางสั้นที่สุด อย่างรวดเร็วและแข็งแรง</li>
-                                <li>กลับมาอยู่ในลักษณะ <strong>"ท่าตรง"</strong> (มือแนบชิดตะเข็บกางเกง)</li>
-                                <li>ไม่ตบขาหรือทำให้เกิดเสียงดังจนเกินความจำเป็น</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 5: ลำดับขั้นตอนการสอน (ตาราง) -->
-            <div class="mb-8">
-                <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                    <span class="bg-blue-100 text-blue-800 p-2 rounded mr-3">๔</span> ลำดับขั้นตอนการฝึกสอน (Instructional Sequence)
-                </h3>
-                <div class="overflow-x-auto">
-                    <table class="min-w-[600px] md:min-w-full bg-white border border-gray-300">
-                        <thead>
-                            <tr class="bg-gray-100">
-                                <th class="py-2 px-4 border-b border-gray-300 text-left w-24">เวลา</th>
-                                <th class="py-2 px-4 border-b border-gray-300 text-left">กิจกรรม</th>
-                                <th class="py-2 px-4 border-b border-gray-300 text-left">การปฏิบัติของครู/ผู้รับการฝึก</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-gray-700">
-                            <tr>
-                                <td class="py-3 px-4 border-b border-gray-200">5 นาที</td>
-                                <td class="py-3 px-4 border-b border-gray-200 font-semibold text-blue-700">1. กล่าวนำ (Introduction)</td>
-                                <td class="py-3 px-4 border-b border-gray-200">
-                                    - จัดแถว ตรวจยอด ตรวจเครื่องแต่งกาย<br>
-                                    - ชี้แจงเรื่องที่จะทำการฝึก ความมุ่งหมาย และประโยชน์ของการแสดงความเคารพ
-                                </td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="py-3 px-4 border-b border-gray-200">10 นาที</td>
-                                <td class="py-3 px-4 border-b border-gray-200 font-semibold text-blue-700">2. อธิบายและสาธิต (Demonstration)</td>
-                                <td class="py-3 px-4 border-b border-gray-200">
-                                    - ครูสาธิตให้ดูในจังหวะปกติ 1 ครั้ง (หันหน้า, หันข้าง)<br>
-                                    - ครูอธิบายพร้อมสาธิตช้าๆ โดยละเอียด ทีละจุด (ตำแหน่งมือ, ศอก, สายตา)<br>
-                                    - สาธิตการทำท่ามือลง
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="py-3 px-4 border-b border-gray-200">25 นาที</td>
-                                <td class="py-3 px-4 border-b border-gray-200 font-semibold text-blue-700">3. การฝึกปฏิบัติ (Practice)</td>
-                                <td class="py-3 px-4 border-b border-gray-200">
-                                    - <strong>ฝึกแบบปิดระยะ:</strong> ครูสั่ง "วันทยหัตถ์" ให้ผู้รับการฝึกทำค้างไว้ ครูเดินตรวจแก้ไขท่าทาง<br>
-                                    - <strong>ฝึกแบบเปิดระยะ:</strong> ให้ปฏิบัติตามจังหวะคำบอกของครู<br>
-                                    - ฝึกปฏิบัติเป็นหมู่/หมวด เพื่อดูความพร้อมเพรียง
-                                </td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="py-3 px-4 border-b border-gray-200">10 นาที</td>
-                                <td class="py-3 px-4 border-b border-gray-200 font-semibold text-blue-700">4. สรุปและประเมินผล (Conclusion)</td>
-                                <td class="py-3 px-4 border-b border-gray-200">
-                                    - สุ่มเรียกผู้รับการฝึกออกมาปฏิบัติให้เพื่อนดู<br>
-                                    - ชี้แจงข้อบกพร่องที่พบเห็นบ่อยและวิธีแก้ไข<br>
-                                    - ตอบข้อซักถาม และสั่งเลิกแถว
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <div class="img-container" id="img-cont-0"><div class="img-wrapper"><img class="editable-img" style="opacity: 1;" src="images/img_0.png" loading="lazy"></div></div>
             
-            <!-- Signature Area -->
-            <div class="mt-12 md:mt-16 flex flex-col md:flex-row justify-between px-2 md:px-8 text-center text-gray-700 page-break gap-10 md:gap-0">
-                <div>
-                    <p class="mb-6 md:mb-8">ลงชื่อ ........................................................... ผู้เขียนแผน</p>
-                    <p>( ........................................................... )</p>
-                    <p class="text-sm mt-1">ครูฝึก / ผู้บังคับหมวด</p>
-                </div>
-                <div>
-                    <p class="mb-6 md:mb-8">ลงชื่อ ........................................................... ผู้ตรวจ/อนุมัติ</p>
-                    <p>( ........................................................... )</p>
-                    <p class="text-sm mt-1">ผู้บังคับกองร้อย / หัวหน้าชุดครูฝึก</p>
-                </div>
-            </div>
-
+            <p style="padding:0 20px;">เนื้อหา...</p>
         </div>
     </div>
+<div class="slide" id="slide-1" data-name="หน้า 2">
+        <div class="slide-content">
+            
+            <div class="img-container" id="img-cont-1"><div class="img-wrapper"><img class="editable-img" style="opacity: 1;" src="images/img_1.png" loading="lazy"></div></div>
+            
+            <p style="padding:0 20px;">เนื้อหา...</p>
+        </div>
+    </div><div class="slide" id="slide-2" data-name="หน้า 3">
+        <div class="slide-content">
+            
+            <div class="img-container" id="img-cont-2"><div class="img-wrapper"><img class="editable-img" style="opacity: 1;" src="images/img_2.png" loading="lazy"></div></div>
+            
+            <p style="padding:0 20px;">เนื้อหา...</p>
+        </div>
+    </div><div class="slide" id="slide-3" data-name="หน้า 4">
+        <div class="slide-content">
+            
+            <div class="img-container" id="img-cont-3"><div class="img-wrapper"><img class="editable-img" style="opacity: 1;" src="images/img_3.png" loading="lazy"></div></div>
+            
+            <p style="padding:0 20px;">เนื้อหา...</p>
+        </div>
+    </div><div class="slide" id="slide-4" data-name="หน้า 5">
+        <div class="slide-content">
+            
+            <div class="img-container" id="img-cont-4"><div class="img-wrapper"><img class="editable-img" style="opacity: 1;" src="images/img_4.png" loading="lazy"></div></div>
+            
+            <p style="padding:0 20px;">เนื้อหา...</p>
+        </div>
+    </div></div>
 
-</body>
-</html>
+<div class="nav">
+  <button onclick="prev()">◀</button>
+  <button onclick="next()">▶</button>
+</div>
+
+<div class="page-control">
+  <span style="font-size:12px;">หน้า <span id="pageNum">5</span></span>
+  <input type="range" id="pageSlider" min="0" max="4" value="0" oninput="goSlide(this.value)">
+</div>
+
+<script>
+// PDF.js Worker
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+let currentZoom = 1.0;
+let totalSlides = 1; 
+let currentSlideIndexForImg = 0;
+const slider = document.getElementById("slider");
+const loadingOverlay = document.getElementById('loading-overlay');
+const loadingText = document.getElementById('loading-text');
+const loadingSubText = document.getElementById('loading-subtext');
+
+// --- 🚀 LAZY LOADING OBSERVER (For Editor) ---
+const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            if (img.dataset.src) {
+                img.src = img.dataset.src; 
+                img.removeAttribute('data-src');
+                img.style.opacity = 1;
+                observer.unobserve(img);
+            }
+        }
+    });
+}, { rootMargin: "200% 0px 200% 0px" }); 
+
+// Initial Setup
+buildTOC();
+goSlide(0); 
+
+// --- Core Helper: True Auto-Crop on Canvas (Adjusted Padding) ---
+function cropCanvasToContent(sourceCanvas, pad = 8) {
+    const ctx = sourceCanvas.getContext('2d', { willReadFrequently: true });
+    const imgData = ctx.getImageData(0, 0, sourceCanvas.width, sourceCanvas.height);
+    const data = imgData.data;
+    let minX = sourceCanvas.width, minY = sourceCanvas.height, maxX = 0, maxY = 0;
+    let found = false;
+
+    for (let y = 0; y < sourceCanvas.height; y++) {
+        for (let x = 0; x < sourceCanvas.width; x++) {
+            const i = (y * sourceCanvas.width + x) * 4;
+            const r = data[i], g = data[i+1], b = data[i+2], a = data[i+3];
+            // Ignore transparent or nearly pure white pixels
+            if (a > 20 && (r < 250 || g < 250 || b < 250)) {
+                if (x < minX) minX = x;
+                if (x > maxX) maxX = x;
+                if (y < minY) minY = y;
+                if (y > maxY) maxY = y;
+                found = true;
+            }
+        }
+    }
+
+    if (!found) return sourceCanvas; // Empty canvas
+
+    // Apply exact padding (increased for better readability)
+    minX = Math.max(0, minX - pad);
+    minY = Math.max(0, minY - pad);
+    maxX = Math.min(sourceCanvas.width, maxX + pad);
+    maxY = Math.min(sourceCanvas.height, maxY + pad);
+
+    const width = maxX - minX;
+    const height = maxY - minY;
+
+    if (width === sourceCanvas.width && height === sourceCanvas.height) return sourceCanvas; // No crop needed
+
+    const croppedCanvas = document.createElement('canvas');
+    croppedCanvas.width = width;
+    croppedCanvas.height = height;
+    croppedCanvas.getContext('2d').drawImage(sourceCanvas, minX, minY, width, height, 0, 0, width, height);
+    return croppedCanvas;
+}
+
+
+// --- Layout Toggle ---
+function toggleLayout() {
+    document.body.classList.toggle('vertical-read');
+    const btn = document.getElementById('layoutBtn');
+    const isVertical = document.body.classList.contains('vertical-read');
+    btn.innerText = isVertical ? "📖 แนวนอน" : "📜 แนวตั้ง";
+    const currentIndex = parseInt(document.getElementById('pageSelect').value) || 0;
+    setTimeout(() => goSlide(currentIndex), 100);
+}
+
+// --- DELETE PAGE LOGIC ---
+function deleteSlide(btn) {
+    if(confirm("ยืนยันลบหน้านี้?")) {
+        const slide = btn.closest('.slide');
+        slide.remove();
+        if(document.querySelectorAll('.slide').length === 0) addNewPage(); 
+        reindexSlides();
+    }
+}
+
+function reindexSlides() {
+    const slides = document.querySelectorAll('.slide');
+    slides.forEach((slide, i) => {
+        slide.id = `slide-${i}`;
+        const addImgBtn = slide.querySelector('.add-img-btn');
+        if(addImgBtn) addImgBtn.setAttribute('onclick', `triggerAddImage(${i})`);
+        const imgCont = slide.querySelector('.img-container');
+        if(imgCont) imgCont.id = `img-cont-${i}`;
+    });
+    buildTOC(); 
+    updateCounters();
+    const current = parseInt(document.getElementById('pageSelect').value) || 0;
+    if(current >= slides.length) goSlide(slides.length - 1);
+    else goSlide(current);
+}
+
+// --- Bulk Upload Logic ---
+document.getElementById('bulkInput').addEventListener('change', async function(e) {
+    const files = Array.from(this.files);
+    if(files.length === 0) return;
+    files.sort((a,b) => a.name.localeCompare(b.name, undefined, {numeric: true, sensitivity: 'base'}));
+    const slides = document.querySelectorAll('.slide');
+    if(slides.length === 1) {
+        const firstSlide = slides[0];
+        const hasImages = firstSlide.querySelectorAll('img').length > 0;
+        if(!hasImages) slider.innerHTML = ''; 
+    }
+    
+    loadingOverlay.style.display = 'flex';
+    
+    try {
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            loadingText.innerText = `กำลังนำเข้าไฟล์ ${i+1}/${files.length}`;
+            loadingSubText.innerText = `ครอบอัตโนมัติ: ${file.name}`;
+            
+            // Allow UI to update
+            await new Promise(r => setTimeout(r, 10));
+
+            if (file.type === 'application/pdf') {
+                await processPDF(file);
+            } else if (file.type.startsWith('image/')) {
+                await processImageWithAutoCrop(file);
+            }
+        }
+        reindexSlides();
+        goSlide(0);
+        loadingOverlay.style.display = 'none';
+    } catch (err) {
+        console.error(err);
+        loadingOverlay.style.display = 'none';
+        alert("เกิดข้อผิดพลาดในการประมวลผลไฟล์");
+    }
+    this.value = ''; 
+});
+
+// --- 🖼 Image Processing with Auto-Crop (Preserve Format JPG/PNG) ---
+async function processImageWithAutoCrop(file) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = img.naturalWidth;
+            canvas.height = img.naturalHeight;
+            canvas.getContext('2d').drawImage(img, 0, 0);
+            
+            const croppedCanvas = cropCanvasToContent(canvas, 8); // Auto crop 8px padding
+            
+            croppedCanvas.toBlob(blob => {
+                const newUrl = URL.createObjectURL(blob);
+                const fakeFile = new File([blob], file.name, { type: file.type }); // Save as new File preserving type
+                createNewSlide(newUrl, fakeFile);
+                resolve();
+            }, file.type || 'image/jpeg', 0.90);
+        };
+        img.onerror = reject;
+        img.src = URL.createObjectURL(file);
+    });
+}
+
+// --- 🖼 PDF 4K Rendering + Auto-Crop ---
+async function processPDF(file) {
+    const arrayBuffer = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument(arrayBuffer).promise;
+    
+    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+        loadingSubText.innerText = `แปลง PDF เป็น 4K และครอบขอบ หน้า ${pageNum}/${pdf.numPages}`;
+        const page = await pdf.getPage(pageNum);
+        
+        // Calculate scale to achieve ~4K (3840px width)
+        const unscaledViewport = page.getViewport({ scale: 1.0 });
+        const targetWidth = 3840;
+        let scale = targetWidth / unscaledViewport.width;
+        if(scale > 5.0) scale = 5.0; 
+        if(scale < 2.0) scale = 2.0; 
+        
+        const viewport = page.getViewport({ scale: scale }); 
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d', { alpha: false }); 
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        
+        // Render PDF
+        await page.render({ canvasContext: context, viewport: viewport }).promise;
+        
+        // Auto Crop immediately before saving to memory!
+        const croppedCanvas = cropCanvasToContent(canvas, 8);
+        
+        const blob = await new Promise(resolve => croppedCanvas.toBlob(resolve, 'image/jpeg', 0.90));
+        const imgUrl = URL.createObjectURL(blob);
+        const fakeFile = new File([blob], `pdf_page_${pageNum}.jpg`, { type: 'image/jpeg' });
+        
+        createNewSlide(imgUrl, fakeFile);
+        
+        await new Promise(r => setTimeout(r, 5)); // Yield to prevent freeze
+    }
+}
+
+function createNewSlide(imgSrc, fileRef) {
+    const newIndex = document.querySelectorAll('.slide').length;
+    const slideDiv = document.createElement('div');
+    slideDiv.className = 'slide';
+    slideDiv.id = `slide-${newIndex}`;
+    slideDiv.setAttribute('data-name', `หน้า ${newIndex + 1}`);
+    slideDiv.innerHTML = `
+        <div class="slide-content">
+            <button class="delete-page-btn edit-only" onclick="deleteSlide(this)">❌ ลบหน้านี้</button>
+            <div class="img-container" id="img-cont-${newIndex}"></div>
+            <div class="add-img-btn edit-only" onclick="triggerAddImage(${newIndex})">+ เพิ่มรูปภาพ</div>
+        </div>
+    `;
+    slider.appendChild(slideDiv);
+    const container = slideDiv.querySelector(`#img-cont-${newIndex}`);
+    createImageWrapper(container, imgSrc, fileRef);
+}
+
+// --- Core App Logic ---
+function addNewPage() {
+    const newIndex = document.querySelectorAll('.slide').length;
+    const slideDiv = document.createElement('div');
+    slideDiv.className = 'slide';
+    slideDiv.id = `slide-${newIndex}`;
+    slideDiv.setAttribute('data-name', `หน้า ${newIndex + 1}`);
+    slideDiv.innerHTML = `
+        <div class="slide-content">
+            <button class="delete-page-btn edit-only" onclick="deleteSlide(this)">❌ ลบหน้านี้</button>
+            <div class="img-container" id="img-cont-${newIndex}"></div>
+            <div class="add-img-btn edit-only" onclick="triggerAddImage(${newIndex})">+ เพิ่มรูปภาพ</div>
+            <p contenteditable="true" style="padding:0 20px;">เนื้อหา...</p>
+        </div>
+    `;
+    slider.appendChild(slideDiv);
+    addTocItem(newIndex, `หน้า ${newIndex + 1}`);
+    updateCounters();
+    setTimeout(() => goSlide(newIndex), 100);
+}
+
+function triggerAddImage(index) { currentSlideIndexForImg = index; document.getElementById('imgInputGlobal').click(); }
+document.getElementById('imgInputGlobal').addEventListener('change', async function(e) {
+    if (this.files && this.files.length > 0) {
+        loadingOverlay.style.display = 'flex';
+        
+        // Loop through all selected files to allow multiple specific uploads to a single page
+        for(let i = 0; i < this.files.length; i++) {
+            const file = this.files[i];
+            
+            loadingText.innerText = `กำลังนำเข้ารูปภาพ ${i+1}/${this.files.length}...`;
+            loadingSubText.innerText = `ครอบอัตโนมัติ (เว้นขอบ 8px): ${file.name}`;
+            
+            await new Promise(r => setTimeout(r, 10)); // UI Yield
+            
+            await new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.naturalWidth;
+                    canvas.height = img.naturalHeight;
+                    canvas.getContext('2d').drawImage(img, 0, 0);
+                    
+                    const croppedCanvas = cropCanvasToContent(canvas, 8);
+                    
+                    // Preserve specific file type (PNG or JPG)
+                    croppedCanvas.toBlob(blob => {
+                        const url = URL.createObjectURL(blob);
+                        const fakeFile = new File([blob], file.name, { type: file.type });
+                        const container = document.getElementById(`img-cont-${currentSlideIndexForImg}`);
+                        createImageWrapper(container, url, fakeFile);
+                        resolve();
+                    }, file.type || 'image/jpeg', 0.90);
+                };
+                img.onerror = resolve; // Skip to next if error
+                img.src = URL.createObjectURL(file);
+            });
+        }
+        loadingOverlay.style.display = 'none';
+    }
+    this.value = ''; 
+});
+
+function createImageWrapper(container, src, fileObj = null) {
+    const wrapper = document.createElement('div'); wrapper.className = 'img-wrapper';
+    
+    const img = document.createElement('img'); 
+    img.dataset.src = src; // For Lazy Loading in Editor
+    img.style.opacity = "0"; // Fade-in effect
+    img.className = 'editable-img';
+    if(fileObj) img.fileRef = fileObj;
+    
+    lazyLoadObserver.observe(img);
+
+    const tools = document.createElement('div'); tools.className = 'img-tools edit-only';
+    
+    // Auto crop is now implicit on upload. Kept manual crop for fine-tuning.
+    const cropBtn = document.createElement('button'); cropBtn.className = 'tool-btn crop-btn'; cropBtn.innerText = '✂️ ตัดด้วยมือ'; cropBtn.onclick = function() { initCrop(img); };
+    const delBtn = document.createElement('button'); delBtn.className = 'tool-btn delete-btn'; delBtn.innerText = '❌ ลบ'; delBtn.onclick = function() { wrapper.remove(); };
+    
+    tools.appendChild(cropBtn); tools.appendChild(delBtn); 
+    wrapper.appendChild(img); wrapper.appendChild(tools); 
+    container.appendChild(wrapper);
+}
+
+// --- Manual Cropper (Preserve PNG transparency) ---
+let cropCanvas = document.getElementById('cropCanvas'), ctx = cropCanvas.getContext('2d'), currentCropImg = null, startX, startY, isDragging = false, rect = {x:0, y:0, w:0, h:0}, imgObj = new Image();
+function initCrop(imgElement) {
+    currentCropImg = imgElement; imgObj.src = imgElement.src;
+    imgObj.onload = function() {
+        const maxWidth = window.innerWidth * 0.9, maxHeight = window.innerHeight * 0.8;
+        let displayW = imgObj.naturalWidth, displayH = imgObj.naturalHeight;
+        if (displayW > maxWidth || displayH > maxHeight) { const ratio = Math.min(maxWidth / displayW, maxHeight / displayH); displayW = displayW * ratio; displayH = displayH * ratio; }
+        cropCanvas.width = displayW; cropCanvas.height = displayH;
+        drawOverlay(); document.getElementById('cropModal').style.display = 'flex';
+    }
+}
+function drawOverlay() {
+    ctx.clearRect(0, 0, cropCanvas.width, cropCanvas.height); ctx.drawImage(imgObj, 0, 0, cropCanvas.width, cropCanvas.height);
+    if (rect.w !== 0) {
+        ctx.fillStyle = 'rgba(0,0,0,0.5)'; ctx.fillRect(0, 0, cropCanvas.width, cropCanvas.height);
+        ctx.globalCompositeOperation = 'destination-out'; ctx.fillStyle = 'black'; ctx.fillRect(rect.x, rect.y, rect.w, rect.h);
+        ctx.globalCompositeOperation = 'source-over'; ctx.drawImage(imgObj, rect.x * (imgObj.naturalWidth/cropCanvas.width), rect.y * (imgObj.naturalHeight/cropCanvas.height), rect.w * (imgObj.naturalWidth/cropCanvas.width), rect.h * (imgObj.naturalHeight/cropCanvas.height), rect.x, rect.y, rect.w, rect.h);
+        ctx.strokeStyle = '#00ff00'; ctx.lineWidth = 2; ctx.strokeRect(rect.x, rect.y, rect.w, rect.h);
+    }
+}
+cropCanvas.addEventListener('mousedown', e => { const bRect = cropCanvas.getBoundingClientRect(); startX = e.clientX - bRect.left; startY = e.clientY - bRect.top; isDragging = true; rect = {x:startX, y:startY, w:0, h:0}; });
+cropCanvas.addEventListener('mousemove', e => { if(!isDragging) return; const bRect = cropCanvas.getBoundingClientRect(); rect.w = (e.clientX - bRect.left) - startX; rect.h = (e.clientY - bRect.top) - startY; drawOverlay(); });
+cropCanvas.addEventListener('mouseup', () => { isDragging = false; });
+function closeCrop() { document.getElementById('cropModal').style.display = 'none'; rect = {x:0, y:0, w:0, h:0}; }
+function applyCrop() {
+    if (rect.w === 0 || rect.h === 0) { closeCrop(); return; }
+    let fx = rect.w < 0 ? rect.x + rect.w : rect.x, fy = rect.h < 0 ? rect.y + rect.h : rect.y, fw = Math.abs(rect.w), fh = Math.abs(rect.h);
+    const scaleX = imgObj.naturalWidth / cropCanvas.width, scaleY = imgObj.naturalHeight / cropCanvas.height;
+    
+    const tempCanvas = document.createElement('canvas'); tempCanvas.width = fw * scaleX; tempCanvas.height = fh * scaleY;
+    tempCanvas.getContext('2d').drawImage(imgObj, fx * scaleX, fy * scaleY, fw * scaleX, fh * scaleY, 0, 0, tempCanvas.width, tempCanvas.height);
+    
+    // Check if the original image was PNG to keep transparent background
+    const mimeType = (currentCropImg.fileRef && currentCropImg.fileRef.type === 'image/png') ? 'image/png' : 'image/jpeg';
+    
+    tempCanvas.toBlob(blob => {
+        const newUrl = URL.createObjectURL(blob);
+        currentCropImg.src = newUrl; 
+        currentCropImg.dataset.src = newUrl;
+        
+        // Update fileRef so export knows the correct format
+        currentCropImg.fileRef = new File([blob], `cropped.${mimeType === 'image/png' ? 'png' : 'jpg'}`, { type: mimeType }); 
+        
+        closeCrop();
+    }, mimeType, 0.95);
+}
+
+// Navigation & Logic
+function next(){ slider.scrollBy({left:window.innerWidth, behavior:"smooth"}); }
+function prev(){ slider.scrollBy({left:-window.innerWidth, behavior:"smooth"}); }
+
+function goSlide(index){ 
+    index = parseInt(index);
+    if (document.body.classList.contains('vertical-read')) {
+        const target = document.getElementById(`slide-${index}`);
+        if(target) slider.scrollTo({top: target.offsetTop - 50, behavior: "smooth"});
+    } else {
+        slider.scrollTo({left:index*window.innerWidth, behavior:"smooth"}); 
+    }
+    updatePageUI(index);
+}
+
+function updatePageUI(index) {
+    index = Math.round(index); 
+    const sliderInput = document.getElementById("pageSlider"), pageNum = document.getElementById("pageNum"), pageSelect = document.getElementById("pageSelect");
+    document.querySelectorAll('.toc-item-wrapper').forEach(d => d.classList.remove('active'));
+    const activeToc = document.getElementById(`toc-wrap-${index}`); if(activeToc) activeToc.classList.add('active');
+    if(sliderInput) sliderInput.value = index; if(pageNum) pageNum.innerText = Number(index)+1; if(pageSelect) pageSelect.value = index;
+}
+
+slider.addEventListener('scroll', () => { 
+    if (document.body.classList.contains('vertical-read')) {
+        const slides = document.querySelectorAll('.slide');
+        let current = 0;
+        slides.forEach((slide, index) => { if (slide.offsetTop <= slider.scrollTop + window.innerHeight/2) current = index; });
+        updatePageUI(current);
+    } else {
+        let index = Math.round(slider.scrollLeft / window.innerWidth); 
+        updatePageUI(index); 
+    }
+});
+
+// TOC
+function buildTOC() {
+    const toc = document.getElementById("toc"); toc.innerHTML = '';
+    document.querySelectorAll('.slide').forEach((slide, index) => { let name = slide.getAttribute('data-name') || `หน้า ${index + 1}`; addTocItem(index, name); });
+    updateCounters();
+}
+function addTocItem(index, name) {
+    const toc = document.getElementById("toc"), wrapper = document.createElement('div'); wrapper.className = 'toc-item-wrapper'; wrapper.id = `toc-wrap-${index}`;
+    
+    const isEditor = document.getElementById('bulkInput') !== null;
+
+    if (isEditor) {
+        const textDiv = document.createElement('div'); 
+        textDiv.className = 'toc-text'; 
+        textDiv.innerText = name; 
+        textDiv.setAttribute('contenteditable', 'true');
+        textDiv.onclick = (e) => { goSlide(index); toggleTOC(); };
+        textDiv.addEventListener('input', function() { const slide = document.getElementById(`slide-${index}`); if(slide) slide.setAttribute('data-name', this.innerText); });
+        
+        const delBtn = document.createElement('span');
+        delBtn.className = 'toc-del-btn edit-only';
+        delBtn.innerText = '❌';
+        delBtn.title = 'ลบหน้านี้';
+        delBtn.onclick = (e) => {
+            e.stopPropagation();
+            const slide = document.getElementById(`slide-${index}`);
+            if(slide) deleteSlide({ closest: () => slide });
+        };
+        wrapper.appendChild(textDiv);
+        wrapper.appendChild(delBtn);
+    } else {
+        const link = document.createElement('a');
+        link.className = 'toc-text';
+        link.innerText = name;
+        link.href = `#slide-${index}`;
+        link.onclick = () => { toggleTOC(); };
+        link.style.display = 'block';
+        link.style.textDecoration = 'none';
+        link.style.color = 'inherit';
+        wrapper.appendChild(link);
+    }
+    toc.appendChild(wrapper);
+}
+function updateCounters() {
+    totalSlides = document.querySelectorAll('.slide').length;
+    document.getElementById("pageSlider").max = totalSlides - 1;
+    const select = document.getElementById("pageSelect"); select.innerHTML = '';
+    for(let i=0; i<totalSlides; i++) { const opt = document.createElement('option'); opt.value = i; opt.innerText = i+1; select.appendChild(opt); }
+}
+
+// Utils
+function toggleTOC(){ document.getElementById("toc").classList.toggle("show"); }
+function fontSize(change){
+  currentZoom += (change * 0.1); 
+  if(currentZoom < 0.5) currentZoom = 0.5; if(currentZoom > 5.0) currentZoom = 5.0; 
+  
+  const widthPercent = Math.round(currentZoom * 100);
+  document.querySelectorAll(".slide-content").forEach(el => { 
+    el.style.zoom = ""; el.style.transform = ""; 
+    el.style.width = widthPercent + "%";
+    el.style.fontSize = (18 * currentZoom) + "px";
+  });
+}
+function changeTheme(themeName) { document.body.className = themeName; }
+
+// --- 📦 FIX ASYNC 4K EXPORT LOGIC (Dynamically keep PNG/JPG extensions) ---
+async function downloadZip(){
+    loadingOverlay.style.display = 'flex';
+    loadingText.innerText = "กำลังแพ็กไฟล์ E-book...";
+    loadingSubText.innerText = "กำลังแปลงข้อมูลเป็นไฟล์ Zip (4K Quality) อาจใช้เวลาสักครู่...";
+
+    try {
+        const zip = new JSZip();
+        const imgFolder = zip.folder("images");
+        
+        const clone = document.documentElement.cloneNode(true);
+        
+        // Cleanup Editor UI
+        const editorTools = clone.querySelectorAll(".edit-only, .delete-page-btn, .toc-del-btn, #cropModal, #imgInputGlobal, #loading-overlay, #bulkInput");
+        editorTools.forEach(el => el.remove());
+        
+        clone.querySelectorAll("[contenteditable]").forEach(el => el.removeAttribute("contenteditable"));
+        
+        const tocContainer = clone.querySelector('#toc'); 
+        if(tocContainer) tocContainer.innerHTML = '';
+
+        const pageSelect = clone.querySelector('#pageSelect');
+        if(pageSelect) {
+            pageSelect.setAttribute('onchange', "window.location.hash = '#slide-' + this.value");
+        }
+
+        const exportScript = document.createElement('script');
+        exportScript.textContent = `
+            window.addEventListener('load', () => {
+                buildTOC(); 
+                if(window.location.hash) {
+                    const index = window.location.hash.replace('#slide-', '');
+                    goSlide(index);
+                }
+            });
+            window.addEventListener('hashchange', () => {
+                const index = window.location.hash.replace('#slide-', '');
+                goSlide(index);
+            });
+        `;
+        clone.querySelector('body').appendChild(exportScript);
+
+        // --- Fetch High-Res Blobs Async ---
+        const images = clone.querySelectorAll("img.editable-img");
+        const originalImages = document.querySelectorAll("img.editable-img");
+
+        for(let i=0; i<images.length; i++) {
+            const imgClone = images[i];
+            const imgOriginal = originalImages[i];
+            
+            const targetSrc = imgOriginal.dataset.src || imgOriginal.src;
+            if(!targetSrc) continue;
+
+            loadingSubText.innerText = `กำลังบันทึกภาพหน้า ${i+1}/${images.length}`;
+
+            let filename = `img_${Date.now()}_${i}.jpg`;
+            let dataBlob = null;
+            let finalExt = 'jpg';
+
+            if (imgOriginal.fileRef) {
+                dataBlob = imgOriginal.fileRef;
+                finalExt = dataBlob.type === 'image/png' ? 'png' : 'jpg';
+                filename = `img_${i}.${finalExt}`;
+            } else if (targetSrc.startsWith('blob:')) {
+                const response = await fetch(targetSrc);
+                dataBlob = await response.blob();
+                finalExt = dataBlob.type === 'image/png' ? 'png' : 'jpg';
+                filename = `img_${i}.${finalExt}`;
+            } else if (targetSrc.startsWith('data:')) {
+                dataBlob = targetSrc.split(',')[1];
+                finalExt = targetSrc.includes('image/png') ? 'png' : 'jpg';
+                filename = `img_${i}.${finalExt}`;
+            }
+
+            if (dataBlob) {
+                if(targetSrc.startsWith('data:')) {
+                    imgFolder.file(filename, dataBlob, {base64: true});
+                } else {
+                    imgFolder.file(filename, dataBlob);
+                }
+                
+                imgClone.src = "images/" + filename;
+                imgClone.removeAttribute('data-src');
+                imgClone.setAttribute('loading', 'lazy'); 
+                imgClone.style.opacity = "1"; 
+            }
+        }
+
+        zip.file("index.html", "<!DOCTYPE html>\n" + clone.outerHTML);
+
+        loadingSubText.innerText = "กำลังสร้างไฟล์ Zip ขั้นสุดท้าย...";
+        const content = await zip.generateAsync({type:"blob"});
+        
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(content);
+        a.download = "ebook-project-4k.zip";
+        a.click();
+        
+        loadingOverlay.style.display = 'none';
+
+    } catch (err) {
+        console.error(err);
+        loadingOverlay.style.display = 'none';
+        alert("เกิดข้อผิดพลาดในการบันทึกไฟล์");
+    }
+}
+</script>
+
+<script>
+            window.addEventListener('load', () => {
+                buildTOC(); 
+                if(window.location.hash) {
+                    const index = window.location.hash.replace('#slide-', '');
+                    goSlide(index);
+                }
+            });
+            window.addEventListener('hashchange', () => {
+                const index = window.location.hash.replace('#slide-', '');
+                goSlide(index);
+            });
+        </script></body></html>
