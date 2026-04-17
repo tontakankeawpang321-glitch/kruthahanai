@@ -9,16 +9,15 @@
 
 <style>
   :root {
-    /* ===== Military Theme Color Palette ===== */
-    --bg: #f4f1e8;          /* พื้นหลังสีกระดาษ/กากีอ่อน */
-    --paper: #ffffff;       /* การ์ดขาวสะอาด */
-    --ink: #1c1e1a;         /* ตัวอักษรสีดำเข้มเกือบสนิท */
-    --muted: #5e6b5a;       /* ข้อความรองสีเขียวหม่น */
-    --line: #dcdfda;        /* เส้นแบ่งสีเทาเขียว */
-    --brand: #4a5c43;       /* สีเขียวทหาร (Olive Drab) */
-    --brand-dark: #354230;  /* เขียวเข้มกว่า */
-    --brand-accent: #c0392b; /* สีแดงสำหรับเน้น */
-    --radius: 8px;          /* ลดความโค้งมนลง */
+    --bg: #f4f1e8;
+    --paper: #ffffff;
+    --ink: #1c1e1a;
+    --muted: #5e6b5a;
+    --line: #dcdfda;
+    --brand: #4a5c43;
+    --brand-dark: #354230;
+    --brand-accent: #c0392b;
+    --radius: 8px;
     --shadow: 0 4px 8px -4px rgba(0,0,0,.2);
   }
 
@@ -64,7 +63,6 @@
   }
   .subtitle { margin: 2px 0 0; color: var(--muted); font-size: clamp(12px, 3.2vw, 14px); }
 
-  /* Section Title */
   .section { margin-top: 24px; }
   .section h2 {
       margin: 0 0 12px;
@@ -81,7 +79,6 @@
   @media (min-width: 540px) { .grid { grid-template-columns: 1fr 1fr; } }
   @media (min-width: 840px) { .grid { grid-template-columns: 1fr 1fr 1fr 1fr; } }
 
-  /* ปุ่ม UI */
   .manual-item {
     display: flex;
     align-items: center;
@@ -104,7 +101,6 @@
   .item-icon { color: #f0c040; flex-shrink: 0; }
   .item-text small { opacity: 0.8; display: block; font-size: 12px; }
 
-  /* Video Section Styles */
   .search-container {
     margin-bottom: 16px;
     position: relative;
@@ -175,7 +171,6 @@
     min-height: 40px;
   }
 
-  /* Pagination Buttons */
   .pagination-controls {
     display: flex;
     justify-content: center;
@@ -204,7 +199,6 @@
     color: var(--muted);
   }
 
-  /* Video Player Modal */
   #video-modal {
     position: fixed;
     top: 0; left: 0;
@@ -242,7 +236,6 @@
 
   footer { margin-top: 30px; text-align: center; color: var(--muted); font-size: 14px; }
 
-  /* Chatbot Styles */
   #fab-chat-toggle {
     position: fixed; bottom: 25px; right: 25px;
     width: 60px; height: 60px;
@@ -269,7 +262,6 @@
     </div>
   </div>
 
-  <!-- ส่วนวิดีโอไดนามิก (แสดง 4 คลิปต่อหน้า) -->
   <div class="section">
     <div class="flex justify-between items-end mb-3">
       <h2 class="m-0 border-0">วิดีโอสาธิตการฝึก</h2>
@@ -284,7 +276,6 @@
       <div class="col-span-full text-center py-10 text-gray-500">กำลังโหลดวิดีโอ...</div>
     </div>
 
-    <!-- ปุ่มควบคุมหน้าวิดีโอ -->
     <div class="pagination-controls">
       <button id="prev-btn" class="btn-page" disabled>ย้อนกลับ</button>
       <span id="page-info" class="page-info">หน้า 1/1</span>
@@ -331,15 +322,11 @@
   </footer>
 </div>
 
-<!-- Video Player Modal -->
 <div id="video-modal">
   <button class="modal-close" onclick="closeVideo()">✕ ปิดวิดีโอ</button>
-  <div class="video-container" id="player-inner">
-    <!-- iframe will be injected here -->
-  </div>
+  <div class="video-container" id="player-inner"></div>
 </div>
 
-<!-- Chatbot Section -->
 <button id="fab-chat-toggle">Ai</button>
 <div id="chatbot-modal" class="chatbot-hidden">
   <div class="flex flex-col h-screen bg-gray-100">
@@ -366,17 +353,13 @@
 </div>
 
 <script>
-/** * ดึงข้อมูลวิดีโอจาก CSV URL
- */
 const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vReux98cfJgRfpJqvWTB7m875BG7vergb2Juzy4cQ9IDRDbkhmW2ZEgn0MNhs9ttbYLQB7mp7HUmFGN/pub?output=csv";
 
 let VIDEO_DATA = [];
-
 const videoGrid = document.getElementById('video-grid');
 const videoSearch = document.getElementById('video-search');
 const videoModal = document.getElementById('video-modal');
 const playerInner = document.getElementById('player-inner');
-
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 const pageInfo = document.getElementById('page-info');
@@ -385,17 +368,12 @@ const ITEMS_PER_PAGE = 4;
 let currentPage = 1;
 let currentSearch = "";
 
-// ฟังก์ชันโหลดและพาร์สข้อมูลจาก CSV
 async function loadVideoData() {
   try {
     const response = await fetch(CSV_URL);
     const data = await response.text();
-    
-    // แยกบรรทัด (ข้ามหัวตารางถ้ามี)
     const rows = data.split('\n').slice(1); 
-    
     VIDEO_DATA = rows.map(row => {
-      // จัดการกับเครื่องหมายอัญประกาศใน CSV ถ้ามี
       const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
       if (cols.length >= 2) {
         return {
@@ -405,26 +383,27 @@ async function loadVideoData() {
       }
       return null;
     }).filter(v => v !== null && v.url !== "");
-
     renderVideos();
   } catch (error) {
-    console.error("Error loading CSV:", error);
     videoGrid.innerHTML = `<div class="col-span-full text-center py-10 text-red-500">เกิดข้อผิดพลาดในการโหลดข้อมูลวิดีโอ</div>`;
   }
 }
 
-// ฟังก์ชันดึง Thumbnail และสร้างการ์ดวิดีโอ
+function getYouTubeID(url) {
+    let videoId = "";
+    if (url.includes("embed/")) videoId = url.split("embed/")[1].split("?")[0];
+    else if (url.includes("v=")) videoId = url.split("v=")[1].split("&")[0];
+    else if (url.includes("youtu.be/")) videoId = url.split("youtu.be/")[1].split("?")[0];
+    return videoId;
+}
+
 function renderVideos() {
   videoGrid.innerHTML = "";
-  
   const filtered = VIDEO_DATA.filter(v => v.title.toLowerCase().includes(currentSearch.toLowerCase()));
-  
   const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE) || 1;
   if (currentPage > totalPages) currentPage = totalPages;
-  
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = startIndex + ITEMS_PER_PAGE;
-  const pageItems = filtered.slice(startIndex, endIndex);
+  const pageItems = filtered.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   pageInfo.innerText = `หน้า ${currentPage}/${totalPages}`;
   prevBtn.disabled = currentPage === 1;
@@ -436,13 +415,8 @@ function renderVideos() {
   }
 
   pageItems.forEach(video => {
-    let videoId = "";
-    if (video.url.includes("embed/")) videoId = video.url.split("embed/")[1].split("?")[0];
-    else if (video.url.includes("v=")) videoId = video.url.split("v=")[1].split("&")[0];
-    else if (video.url.includes("youtu.be/")) videoId = video.url.split("youtu.be/")[1].split("?")[0];
-    
+    const videoId = getYouTubeID(video.url);
     const thumbUrl = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : "https://via.placeholder.com/480x270/4a5c43/ffffff?text=Video";
-
     const card = document.createElement('div');
     card.className = "video-card";
     card.onclick = () => openVideo(video.url);
@@ -459,16 +433,23 @@ function renderVideos() {
   });
 }
 
+// ฟังก์ชันเปิดวิดีโอที่แก้ไขแล้ว
 function openVideo(url) {
-  let embedUrl = url;
-  if (url.includes("youtube.com/watch?v=")) {
-    embedUrl = url.replace("watch?v=", "embed/");
-  } else if (url.includes("youtu.be/")) {
-    embedUrl = url.replace("youtu.be/", "youtube.com/embed/");
-  }
+  const videoId = getYouTubeID(url);
+  if (!videoId) return;
+
+  const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&showinfo=0`;
   
-  const cleanUrl = embedUrl.split('?')[0];
-  playerInner.innerHTML = `<iframe src="${cleanUrl}?autoplay=1&rel=0" allow="autoplay; fullscreen"></iframe>`;
+  // แก้ไขจุดสำคัญ: เพิ่ม allowfullscreen และสิทธิ์ต่างๆ เพื่อให้ WebView อนุญาตการขยายจอ
+  playerInner.innerHTML = `
+    <iframe 
+        src="${embedUrl}" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen 
+        webkitallowfullscreen 
+        mozallowfullscreen>
+    </iframe>`;
+    
   videoModal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
@@ -485,28 +466,15 @@ videoSearch.addEventListener('input', (e) => {
   renderVideos();
 });
 
-prevBtn.onclick = () => {
-  if (currentPage > 1) {
-    currentPage--;
-    renderVideos();
-  }
-};
-
+prevBtn.onclick = () => { if (currentPage > 1) { currentPage--; renderVideos(); } };
 nextBtn.onclick = () => {
   const filtered = VIDEO_DATA.filter(v => v.title.toLowerCase().includes(currentSearch.toLowerCase()));
-  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
-  if (currentPage < totalPages) {
-    currentPage++;
-    renderVideos();
-  }
+  if (currentPage < Math.ceil(filtered.length / ITEMS_PER_PAGE)) { currentPage++; renderVideos(); }
 };
 
-// เริ่มต้นโหลดข้อมูล
 loadVideoData();
 
-/** =========================================
-    ส่วน Chatbot AI
-    ========================================= */
+/* Chatbot AI */
 const chatModal = document.getElementById('chatbot-modal');
 const fabToggle = document.getElementById('fab-chat-toggle');
 const closeBtn = document.getElementById('chatbot-close-btn');
@@ -536,6 +504,5 @@ sendBtn.onclick = () => {
   }, 1000);
 }
 </script>
-
 </body>
 </html>
