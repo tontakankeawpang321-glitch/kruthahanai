@@ -6,18 +6,20 @@
 <title>ครูฝึกทหารใหม่ – คู่มือภาคสนาม (AI & Video)</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
   :root {
-    --bg: #f4f1e8;
-    --paper: #ffffff;
-    --ink: #1c1e1a;
-    --muted: #5e6b5a;
-    --line: #dcdfda;
-    --brand: #4a5c43;
-    --brand-dark: #354230;
-    --brand-accent: #c0392b;
-    --radius: 8px;
+    /* ===== Military Theme Color Palette ===== */
+    --bg: #f4f1e8;          /* พื้นหลังสีกระดาษ/กากีอ่อน */
+    --paper: #ffffff;       /* การ์ดขาวสะอาด */
+    --ink: #1c1e1a;         /* ตัวอักษรสีดำเข้มเกือบสนิท */
+    --muted: #5e6b5a;       /* ข้อความรองสีเขียวหม่น */
+    --line: #dcdfda;        /* เส้นแบ่งสีเทาเขียว */
+    --brand: #4a5c43;       /* สีเขียวทหาร (Olive Drab) */
+    --brand-dark: #354230;  /* เขียวเข้มกว่า */
+    --brand-accent: #c0392b; /* สีแดงสำหรับเน้น */
+    --radius: 8px;          /* ลดความโค้งมนลง */
     --shadow: 0 4px 8px -4px rgba(0,0,0,.2);
   }
 
@@ -63,6 +65,7 @@
   }
   .subtitle { margin: 2px 0 0; color: var(--muted); font-size: clamp(12px, 3.2vw, 14px); }
 
+  /* Section Title */
   .section { margin-top: 24px; }
   .section h2 {
       margin: 0 0 12px;
@@ -71,14 +74,16 @@
       border-bottom: 2px solid var(--line);
   }
   
-  .grid {
+  /* Menu Grid */
+  .grid-menu {
     display: grid;
     gap: 12px;
     grid-template-columns: 1fr;
   }
-  @media (min-width: 540px) { .grid { grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 840px) { .grid { grid-template-columns: 1fr 1fr 1fr 1fr; } }
+  @media (min-width: 540px) { .grid-menu { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 840px) { .grid-menu { grid-template-columns: 1fr 1fr 1fr; } }
 
+  /* ปุ่ม UI */
   .manual-item {
     display: flex;
     align-items: center;
@@ -98,9 +103,10 @@
     box-shadow: 0 8px 16px -6px rgba(0,0,0,.4);
   }
 
-  .item-icon { color: #f0c040; flex-shrink: 0; }
+  .item-icon { color: #f0c040; flex-shrink: 0; font-size: 20px; }
   .item-text small { opacity: 0.8; display: block; font-size: 12px; }
 
+  /* Video Slider System (Horizontal) */
   .search-container {
     margin-bottom: 16px;
     position: relative;
@@ -126,16 +132,41 @@
     color: var(--muted);
   }
 
+  /* Slider Container */
+  .video-slider-container {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    gap: 16px;
+    padding: 4px 0 16px;
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+  }
+  .video-slider-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari */
+  }
+
   .video-card {
+    min-width: calc(50% - 8px); /* แสดง 2 คลิป */
+    flex: 0 0 auto;
+    scroll-snap-align: start;
     background: var(--paper);
     border: 1px solid var(--line);
     border-radius: var(--radius);
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.2s, opacity 0.3s;
+    box-shadow: var(--shadow);
   }
+  
+  @media (max-width: 640px) {
+    .video-card { min-width: calc(100%); } /* มือถือแสดง 1 คลิปเต็ม */
+  }
+
   .video-card:hover {
-    transform: scale(1.02);
+    transform: translateY(-4px);
   }
   .video-thumb {
     aspect-ratio: 16/9;
@@ -171,34 +202,30 @@
     min-height: 40px;
   }
 
-  .pagination-controls {
+  /* Controls for Slider */
+  .slider-controls {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px;
-    margin-top: 20px;
+    margin-top: -8px;
+    margin-bottom: 20px;
   }
-  .btn-page {
+  .slider-btn {
     background: var(--brand);
     color: white;
     border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-weight: 600;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    transition: background 0.2s;
-    font-size: 14px;
+    box-shadow: var(--shadow);
   }
-  .btn-page:disabled {
-    background: var(--line);
-    color: var(--muted);
-    cursor: not-allowed;
-  }
-  .page-info {
-    font-size: 14px;
-    color: var(--muted);
-  }
+  .slider-btn:disabled { background: var(--line); cursor: not-allowed; }
 
+  /* Video Player Modal */
   #video-modal {
     position: fixed;
     top: 0; left: 0;
@@ -236,6 +263,7 @@
 
   footer { margin-top: 30px; text-align: center; color: var(--muted); font-size: 14px; }
 
+  /* Chatbot Styles */
   #fab-chat-toggle {
     position: fixed; bottom: 25px; right: 25px;
     width: 60px; height: 60px;
@@ -262,6 +290,7 @@
     </div>
   </div>
 
+  <!-- ส่วนวิดีโอไดนามิก (สไลด์แนวนอน 2 คลิป) -->
   <div class="section">
     <div class="flex justify-between items-end mb-3">
       <h2 class="m-0 border-0">วิดีโอสาธิตการฝึก</h2>
@@ -269,49 +298,51 @@
     
     <div class="search-container">
       <span class="search-icon">🔍</span>
-      <input type="text" id="video-search" class="search-input" placeholder="ค้นหาชื่อคลิปวิดีโอการฝึก...">
+      <input type="text" id="video-search" class="search-input" placeholder="พิมพ์ชื่อคลิปเพื่อค้นหา...">
     </div>
 
-    <div id="video-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="col-span-full text-center py-10 text-gray-500">กำลังโหลดวิดีโอ...</div>
+    <!-- ปุ่มเลื่อนสไลด์ (Desktop) -->
+    <div class="slider-controls hidden sm:flex">
+      <button class="slider-btn" id="slide-prev" title="ย้อนกลับ"><i class="fa-solid fa-chevron-left"></i></button>
+      <span id="page-info" class="text-sm text-muted font-bold">แสดงคลิปตามคำค้นหา</span>
+      <button class="slider-btn" id="slide-next" title="ถัดไป"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
 
-    <div class="pagination-controls">
-      <button id="prev-btn" class="btn-page" disabled>ย้อนกลับ</button>
-      <span id="page-info" class="page-info">หน้า 1/1</span>
-      <button id="next-btn" class="btn-page">ถัดไป</button>
+    <div id="video-slider" class="video-slider-container">
+      <!-- วิดีโอจะถูกเพิ่มที่นี่โดย JS -->
+      <div class="col-span-full text-center w-full py-10 text-gray-500">กำลังดึงข้อมูลวิดีโอ...</div>
     </div>
   </div>
 
   <div class="section">
     <h2>เมนูหน่วยการสอน</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid-menu">
       <a class="manual-item" href="pandbotlearn.html">
-        <div class="item-icon">📄</div>
+        <div class="item-icon"><i class="fa-solid fa-file-invoice"></i></div>
         <div class="item-text"><div>แผนบทเรียน</div><small>รวมโครงสร้าง/จุดประสงค์</small></div>
       </a>
       <a class="manual-item" href="kabee/index.html">
-        <div class="item-icon">⚔️</div>
+        <div class="item-icon"><i class="fa-solid fa-sword"></i></div>
         <div class="item-text"><div>บุคคลท่ากระบี่ทหาร</div><small>ท่ายืน • จับ • พาด • บรรจุ</small></div>
       </a>
       <a class="manual-item" href="m16/index.html">
-        <div class="item-icon">🔫</div>
+        <div class="item-icon"><i class="fa-solid fa-gun"></i></div>
         <div class="item-text"><div>บุคคลท่าอาวุธ M16</div><small>ท่ายืน จับ พาด บรรจุ ปล่อย</small></div>
       </a>
       <a class="manual-item" href="tar/index.html">
-        <div class="item-icon">🎯</div>
+        <div class="item-icon"><i class="fa-solid fa-crosshairs"></i></div>
         <div class="item-text"><div>บุคคลท่าอาวุธ TAR</div><small>ทำความคุ้น/ความปลอดภัย</small></div>
       </a>
       <a class="manual-item" href="hand/index.html">
-        <div class="item-icon">👤</div>
+        <div class="item-icon"><i class="fa-solid fa-person-walking"></i></div>
         <div class="item-text"><div>บุคคลท่ามือเปล่า</div><small>ท่าตรง–เคารพ–หัน–ก้าว</small></div>
       </a>
       <a class="manual-item" href="subjectsodier.html">
-        <div class="item-icon">📖</div>
+        <div class="item-icon"><i class="fa-solid fa-book-open"></i></div>
         <div class="item-text"><div>วิชาทหารใหม่</div><small>ความรู้พื้นฐาน กฎ ระเบียบ</small></div>
       </a>
       <a class="manual-item" href="peang_armmy.html">
-        <div class="item-icon">🎶</div>
+        <div class="item-icon"><i class="fa-solid fa-music"></i></div>
         <div class="item-text"><div>เพลงทหาร</div><small>สร้างขวัญและกำลังใจ</small></div>
       </a>
     </div>
@@ -322,17 +353,21 @@
   </footer>
 </div>
 
+<!-- Video Player Modal -->
 <div id="video-modal">
   <button class="modal-close" onclick="closeVideo()">✕ ปิดวิดีโอ</button>
-  <div class="video-container" id="player-inner"></div>
+  <div class="video-container" id="player-inner">
+    <!-- iframe will be injected here -->
+  </div>
 </div>
 
+<!-- Chatbot Section -->
 <button id="fab-chat-toggle">Ai</button>
 <div id="chatbot-modal" class="chatbot-hidden">
   <div class="flex flex-col h-screen bg-gray-100">
     <header class="bg-[#4a5c43] text-white p-4 flex justify-between items-center shadow-md">
       <div class="flex items-center gap-2"><span>⭐</span><h1 class="text-lg font-bold text-white m-0">AI ผู้ช่วยครูฝึก</h1></div>
-      <div>
+      <div class="flex gap-2">
         <button id="new-chat-btn" class="bg-[#f4f1e8] text-[#4a5c43] py-1 px-3 rounded text-sm font-bold">เริ่มใหม่</button>
         <button id="chatbot-close-btn" class="bg-gray-700 text-white py-1 px-3 rounded text-sm">ปิด</button>
       </div>
@@ -353,27 +388,30 @@
 </div>
 
 <script>
+/** * ดึงข้อมูลวิดีโอจาก CSV URL
+ */
 const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vReux98cfJgRfpJqvWTB7m875BG7vergb2Juzy4cQ9IDRDbkhmW2ZEgn0MNhs9ttbYLQB7mp7HUmFGN/pub?output=csv";
 
-let VIDEO_DATA = [];
-const videoGrid = document.getElementById('video-grid');
+let ALL_VIDEOS = [];
+let filteredVideos = [];
+
+const videoSlider = document.getElementById('video-slider');
 const videoSearch = document.getElementById('video-search');
 const videoModal = document.getElementById('video-modal');
 const playerInner = document.getElementById('player-inner');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
 const pageInfo = document.getElementById('page-info');
 
-const ITEMS_PER_PAGE = 4;
-let currentPage = 1;
-let currentSearch = "";
+// Slider Navigation
+const slidePrev = document.getElementById('slide-prev');
+const slideNext = document.getElementById('slide-next');
 
 async function loadVideoData() {
   try {
     const response = await fetch(CSV_URL);
     const data = await response.text();
     const rows = data.split('\n').slice(1); 
-    VIDEO_DATA = rows.map(row => {
+    
+    ALL_VIDEOS = rows.map(row => {
       const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
       if (cols.length >= 2) {
         return {
@@ -383,40 +421,34 @@ async function loadVideoData() {
       }
       return null;
     }).filter(v => v !== null && v.url !== "");
+
+    filteredVideos = [...ALL_VIDEOS];
     renderVideos();
   } catch (error) {
-    videoGrid.innerHTML = `<div class="col-span-full text-center py-10 text-red-500">เกิดข้อผิดพลาดในการโหลดข้อมูลวิดีโอ</div>`;
+    console.error("Error loading CSV:", error);
+    videoSlider.innerHTML = `<div class="col-span-full text-center w-full py-10 text-red-500">ไม่สามารถเชื่อมต่อฐานข้อมูลวิดีโอได้</div>`;
   }
-}
-
-function getYouTubeID(url) {
-    let videoId = "";
-    if (url.includes("embed/")) videoId = url.split("embed/")[1].split("?")[0];
-    else if (url.includes("v=")) videoId = url.split("v=")[1].split("&")[0];
-    else if (url.includes("youtu.be/")) videoId = url.split("youtu.be/")[1].split("?")[0];
-    return videoId;
 }
 
 function renderVideos() {
-  videoGrid.innerHTML = "";
-  const filtered = VIDEO_DATA.filter(v => v.title.toLowerCase().includes(currentSearch.toLowerCase()));
-  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE) || 1;
-  if (currentPage > totalPages) currentPage = totalPages;
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const pageItems = filtered.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-
-  pageInfo.innerText = `หน้า ${currentPage}/${totalPages}`;
-  prevBtn.disabled = currentPage === 1;
-  nextBtn.disabled = currentPage === totalPages;
-
-  if (pageItems.length === 0) {
-    videoGrid.innerHTML = `<div class="col-span-full text-center py-10 text-gray-500">ไม่พบวิดีโอที่ค้นหา</div>`;
+  videoSlider.innerHTML = "";
+  
+  if (filteredVideos.length === 0) {
+    videoSlider.innerHTML = `<div class="w-full text-center py-10 text-gray-500">ไม่พบคลิปที่ตรงกับคำว่า "${videoSearch.value}"</div>`;
+    pageInfo.innerText = "ไม่พบข้อมูล";
     return;
   }
 
-  pageItems.forEach(video => {
-    const videoId = getYouTubeID(video.url);
+  pageInfo.innerText = `พบ ${filteredVideos.length} คลิปที่เกี่ยวข้อง`;
+
+  filteredVideos.forEach(video => {
+    let videoId = "";
+    if (video.url.includes("embed/")) videoId = video.url.split("embed/")[1].split("?")[0];
+    else if (video.url.includes("v=")) videoId = video.url.split("v=")[1].split("&")[0];
+    else if (video.url.includes("youtu.be/")) videoId = video.url.split("youtu.be/")[1].split("?")[0];
+    
     const thumbUrl = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : "https://via.placeholder.com/480x270/4a5c43/ffffff?text=Video";
+
     const card = document.createElement('div');
     card.className = "video-card";
     card.onclick = () => openVideo(video.url);
@@ -429,27 +461,39 @@ function renderVideos() {
         <div class="video-title">${video.title}</div>
       </div>
     `;
-    videoGrid.appendChild(card);
+    videoSlider.appendChild(card);
   });
 }
 
-// ฟังก์ชันเปิดวิดีโอที่แก้ไขแล้ว
-function openVideo(url) {
-  const videoId = getYouTubeID(url);
-  if (!videoId) return;
+// Search Logic: Collapse and Filter
+videoSearch.addEventListener('input', (e) => {
+  const term = e.target.value.toLowerCase();
+  filteredVideos = ALL_VIDEOS.filter(v => v.title.toLowerCase().includes(term));
+  renderVideos();
+  videoSlider.scrollLeft = 0; // Reset scroll to start on search
+});
 
-  const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&showinfo=0`;
+// Slider Buttons Logic
+slideNext.onclick = () => {
+  const cardWidth = videoSlider.querySelector('.video-card')?.offsetWidth || 0;
+  videoSlider.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
+};
+
+slidePrev.onclick = () => {
+  const cardWidth = videoSlider.querySelector('.video-card')?.offsetWidth || 0;
+  videoSlider.scrollBy({ left: -cardWidth * 2, behavior: 'smooth' });
+};
+
+function openVideo(url) {
+  let embedUrl = url;
+  if (url.includes("watch?v=")) {
+    embedUrl = url.replace("watch?v=", "embed/");
+  } else if (url.includes("youtu.be/")) {
+    embedUrl = url.replace("youtu.be/", "youtube.com/embed/");
+  }
   
-  // แก้ไขจุดสำคัญ: เพิ่ม allowfullscreen และสิทธิ์ต่างๆ เพื่อให้ WebView อนุญาตการขยายจอ
-  playerInner.innerHTML = `
-    <iframe 
-        src="${embedUrl}" 
-        allow="autoplay; fullscreen; picture-in-picture" 
-        allowfullscreen 
-        webkitallowfullscreen 
-        mozallowfullscreen>
-    </iframe>`;
-    
+  const cleanUrl = embedUrl.split('?')[0];
+  playerInner.innerHTML = `<iframe src="${cleanUrl}?autoplay=1&rel=0" allow="autoplay; fullscreen"></iframe>`;
   videoModal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
@@ -460,21 +504,9 @@ function closeVideo() {
   document.body.style.overflow = 'auto';
 }
 
-videoSearch.addEventListener('input', (e) => {
-  currentSearch = e.target.value;
-  currentPage = 1;
-  renderVideos();
-});
-
-prevBtn.onclick = () => { if (currentPage > 1) { currentPage--; renderVideos(); } };
-nextBtn.onclick = () => {
-  const filtered = VIDEO_DATA.filter(v => v.title.toLowerCase().includes(currentSearch.toLowerCase()));
-  if (currentPage < Math.ceil(filtered.length / ITEMS_PER_PAGE)) { currentPage++; renderVideos(); }
-};
-
-loadVideoData();
-
-/* Chatbot AI */
+/** =========================================
+    Chatbot System (Simulated)
+    ========================================= */
 const chatModal = document.getElementById('chatbot-modal');
 const fabToggle = document.getElementById('fab-chat-toggle');
 const closeBtn = document.getElementById('chatbot-close-btn');
@@ -498,11 +530,15 @@ sendBtn.onclick = () => {
   setTimeout(() => {
     const aiMsg = document.createElement('div');
     aiMsg.className = "flex items-start space-x-2";
-    aiMsg.innerHTML = `<span class="text-2xl">🤖</span><div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm max-w-xs text-sm">รับทราบครับ กำลังหาคำตอบให้ครับ...</div>`;
+    aiMsg.innerHTML = `<span class="text-2xl">🤖</span><div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm max-w-xs text-sm">รับทราบครับ กำลังหาคำตอบเกี่ยวกับเรื่อง "${text}" ให้ครับ...</div>`;
     chatHistoryEl.appendChild(aiMsg);
     chatHistoryEl.scrollTop = chatHistoryEl.scrollHeight;
   }, 1000);
 }
+
+// Start
+loadVideoData();
 </script>
+
 </body>
 </html>
