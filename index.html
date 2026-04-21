@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>ครูฝึกทหารใหม่ – คู่มือภาคสนาม (AI & Video)</title>
+<title>ครูฝึกทหารใหม่ – คู่มือภาคสนาม (Video Dashboard)</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -33,7 +33,7 @@
     -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
   }
 
-  .wrap { max-width: 980px; margin: 0 auto; padding: 16px; padding-bottom: 80px; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 16px; padding-bottom: 40px; }
 
   .header {
     display: flex;
@@ -142,10 +142,10 @@
     display: flex;
     gap: 16px;
     padding: 4px 0 16px;
-    scrollbar-width: none; /* Hide scrollbar Firefox */
+    scrollbar-width: none; 
   }
   .video-slider-container::-webkit-scrollbar {
-    display: none; /* Hide scrollbar Chrome/Safari */
+    display: none; 
   }
 
   .video-card {
@@ -262,21 +262,6 @@
   iframe { width: 100%; height: 100%; border: none; }
 
   footer { margin-top: 30px; text-align: center; color: var(--muted); font-size: 14px; }
-
-  /* Chatbot Styles */
-  #fab-chat-toggle {
-    position: fixed; bottom: 25px; right: 25px;
-    width: 60px; height: 60px;
-    background-color: var(--brand); color: white;
-    border: none; border-radius: 50%;
-    font-size: 28px; cursor: pointer; z-index: 998;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
-  #chatbot-modal {
-    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-    z-index: 1000; transition: 0.3s;
-  }
-  .chatbot-hidden { opacity: 0; transform: translateY(100%); pointer-events: none; }
 </style>
 </head>
 <body>
@@ -301,7 +286,7 @@
       <input type="text" id="video-search" class="search-input" placeholder="พิมพ์ชื่อคลิปเพื่อค้นหา...">
     </div>
 
-    <!-- ปุ่มเลื่อนสไลด์ (Desktop) -->
+    <!-- ปุ่มเลื่อนสไลด์ -->
     <div class="slider-controls hidden sm:flex">
       <button class="slider-btn" id="slide-prev" title="ย้อนกลับ"><i class="fa-solid fa-chevron-left"></i></button>
       <span id="page-info" class="text-sm text-muted font-bold">แสดงคลิปตามคำค้นหา</span>
@@ -309,7 +294,6 @@
     </div>
 
     <div id="video-slider" class="video-slider-container">
-      <!-- วิดีโอจะถูกเพิ่มที่นี่โดย JS -->
       <div class="col-span-full text-center w-full py-10 text-gray-500">กำลังดึงข้อมูลวิดีโอ...</div>
     </div>
   </div>
@@ -356,35 +340,7 @@
 <!-- Video Player Modal -->
 <div id="video-modal">
   <button class="modal-close" onclick="closeVideo()">✕ ปิดวิดีโอ</button>
-  <div class="video-container" id="player-inner">
-    <!-- iframe will be injected here -->
-  </div>
-</div>
-
-<!-- Chatbot Section -->
-<button id="fab-chat-toggle">Ai</button>
-<div id="chatbot-modal" class="chatbot-hidden">
-  <div class="flex flex-col h-screen bg-gray-100">
-    <header class="bg-[#4a5c43] text-white p-4 flex justify-between items-center shadow-md">
-      <div class="flex items-center gap-2"><span>⭐</span><h1 class="text-lg font-bold text-white m-0">AI ผู้ช่วยครูฝึก</h1></div>
-      <div class="flex gap-2">
-        <button id="new-chat-btn" class="bg-[#f4f1e8] text-[#4a5c43] py-1 px-3 rounded text-sm font-bold">เริ่มใหม่</button>
-        <button id="chatbot-close-btn" class="bg-gray-700 text-white py-1 px-3 rounded text-sm">ปิด</button>
-      </div>
-    </header>
-    <main id="chat-history" class="flex-1 overflow-y-auto p-4 space-y-4 bg-[#f4f1e8]">
-      <div class="flex items-start space-x-2">
-        <span class="text-2xl">🤖</span>
-        <div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm max-w-xs text-sm">
-          สวัสดีครับ ผมคือ AI ผู้ช่วยครูฝึก สอบถามเรื่องการฝึกได้เลยครับ
-        </div>
-      </div>
-    </main>
-    <footer class="bg-white p-3 border-t flex gap-2">
-      <input id="user-input" type="text" placeholder="พิมพ์คำถามที่นี่..." class="flex-1 p-2 border rounded-lg outline-none">
-      <button id="send-btn" class="bg-[#4a5c43] text-white px-4 py-2 rounded-lg">ส่ง</button>
-    </footer>
-  </div>
+  <div class="video-container" id="player-inner"></div>
 </div>
 
 <script>
@@ -465,23 +421,23 @@ function renderVideos() {
   });
 }
 
-// Search Logic: Collapse and Filter
+// Search Logic: Filter and Collapse
 videoSearch.addEventListener('input', (e) => {
   const term = e.target.value.toLowerCase();
   filteredVideos = ALL_VIDEOS.filter(v => v.title.toLowerCase().includes(term));
   renderVideos();
-  videoSlider.scrollLeft = 0; // Reset scroll to start on search
+  videoSlider.scrollLeft = 0; 
 });
 
 // Slider Buttons Logic
 slideNext.onclick = () => {
   const cardWidth = videoSlider.querySelector('.video-card')?.offsetWidth || 0;
-  videoSlider.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
+  videoSlider.scrollBy({ left: (cardWidth + 16) * 2, behavior: 'smooth' });
 };
 
 slidePrev.onclick = () => {
   const cardWidth = videoSlider.querySelector('.video-card')?.offsetWidth || 0;
-  videoSlider.scrollBy({ left: -cardWidth * 2, behavior: 'smooth' });
+  videoSlider.scrollBy({ left: -(cardWidth + 16) * 2, behavior: 'smooth' });
 };
 
 function openVideo(url) {
@@ -502,38 +458,6 @@ function closeVideo() {
   playerInner.innerHTML = "";
   videoModal.style.display = 'none';
   document.body.style.overflow = 'auto';
-}
-
-/** =========================================
-    Chatbot System (Simulated)
-    ========================================= */
-const chatModal = document.getElementById('chatbot-modal');
-const fabToggle = document.getElementById('fab-chat-toggle');
-const closeBtn = document.getElementById('chatbot-close-btn');
-
-fabToggle.onclick = () => { chatModal.classList.remove('chatbot-hidden'); fabToggle.style.opacity = '0'; };
-closeBtn.onclick = () => { chatModal.classList.add('chatbot-hidden'); fabToggle.style.opacity = '1'; };
-
-const userInput = document.getElementById('user-input');
-const sendBtn = document.getElementById('send-btn');
-const chatHistoryEl = document.getElementById('chat-history');
-
-sendBtn.onclick = () => {
-  const text = userInput.value.trim();
-  if(!text) return;
-  const userMsg = document.createElement('div');
-  userMsg.className = "flex justify-end";
-  userMsg.innerHTML = `<div class="bg-[#4a5c43] text-white p-2 rounded-lg text-sm max-w-xs">${text}</div>`;
-  chatHistoryEl.appendChild(userMsg);
-  userInput.value = "";
-  chatHistoryEl.scrollTop = chatHistoryEl.scrollHeight;
-  setTimeout(() => {
-    const aiMsg = document.createElement('div');
-    aiMsg.className = "flex items-start space-x-2";
-    aiMsg.innerHTML = `<span class="text-2xl">🤖</span><div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm max-w-xs text-sm">รับทราบครับ กำลังหาคำตอบเกี่ยวกับเรื่อง "${text}" ให้ครับ...</div>`;
-    chatHistoryEl.appendChild(aiMsg);
-    chatHistoryEl.scrollTop = chatHistoryEl.scrollHeight;
-  }, 1000);
 }
 
 // Start
